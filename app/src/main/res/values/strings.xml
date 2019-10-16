@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">EasyList</string>
+
+    <string name="txtSalvar">Salvar</string>
+    <string name="txtListas">Lista de Compras</string>
+    <string name="labelNome">Nome da Lista</string>
+    <string name="labelQuantidade">Quantidade</string>
+
+
+    <string name="hintQuantidade">Quantidade</string>
+    <string name="hintProduto">Produto</string>
+    <string name="hintLista">Nome da lista</string>
+
+
+    <string name="txtAlerta">Atenção!</string>
+    <string name="txtAlertaProduto">Você deve informar os dados solicitados.</string>
+    <string name="txtAlertaListas">Você deve informar os dados solicitados.</string>
+
+    <string name="txtExcluir">Excluir</string>
+    <string name="txtConfirmaExclusao">Confirma a exclusão?</string>
+    <string name="btnCancelar">Cancelar</string>
+    <string name="btnConfirmar">Sim</string>
+
+    <string name="txtListaVazia">Lista Vazia!</string>
+
+
+</resources>

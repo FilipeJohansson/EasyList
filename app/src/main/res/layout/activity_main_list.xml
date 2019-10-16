@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainListActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/appbar"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:paddingTop="26dp"
+            android:paddingBottom="16dp"
+            android:text="@string/txtListas"
+            android:textAlignment="center"
+            android:textColor="#47525E"
+            android:textSize="24sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <SearchView
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:background="@drawable/search_bar"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvNomeLista"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp"
+            android:text="Nome Lista"
+            android:textAlignment="center"
+            android:textColor="#47525E"
+            android:textSize="18sp"
+            app:layout_anchor="@+id/appBarLayout" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:backgroundTint="#9BA6B7"
+        android:tint="#fff"
+        app:backgroundTint="#9BA6B7"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+    <include layout="@layout/content_main_list" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
