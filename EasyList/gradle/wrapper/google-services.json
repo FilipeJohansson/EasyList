@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "318196900253",
+    "firebase_url": "https://easylist-8a611.firebaseio.com",
+    "project_id": "easylist-8a611",
+    "storage_bucket": "easylist-8a611.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318196900253:android:afb6f3dcfdf7dce5180f74",
+        "android_client_info": {
+          "package_name": "easylist.megadev.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "318196900253-at8pak6f133n2qu4tcc3rlmfsri3ns3u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_8bIgxQhRo2rRhAT0dMpd0EnYFY7q2Rs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "318196900253-at8pak6f133n2qu4tcc3rlmfsri3ns3u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
