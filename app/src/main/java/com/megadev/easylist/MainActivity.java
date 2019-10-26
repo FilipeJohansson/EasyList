@@ -10,6 +10,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.List;
 
@@ -19,12 +21,16 @@ import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
+    private FirebaseAuth mAuth;
     private ListView lvListas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Initialize Firebase Auth
+        mAuth = FirebaseAuth.getInstance();
 
         lvListas = findViewById(R.id.lvListas);
 
@@ -41,10 +47,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                Lista time = (Lista) adapterView.getItemAtPosition(i);
+                Lista lista = (Lista) adapterView.getItemAtPosition(i);
 
                 Intent intent = new Intent(MainActivity.this, MainListActivity.class);
-                intent.putExtra("idLista", time.getId());
+                intent.putExtra("idLista", lista.getId());
                 startActivity(intent);
             }
         });
@@ -100,7 +106,22 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        updateUI(currentUser);
+
         carregarLista();
+    }
+
+    private void updateUI(FirebaseUser currentUser) {
+
+        if (currentUser == null) {
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+
+        }
+
     }
 
     private void carregarLista() {

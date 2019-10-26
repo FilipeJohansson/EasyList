@@ -81,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
             try {
                 GoogleSignInAccount account = task.getResult(ApiException.class);
 
-                firebaseAuthWithGoogle(account);
+                if (account != null) firebaseAuthWithGoogle(account);
 
             } catch (ApiException e) {
                 Log.w("TAG", "Google sign in failed", e);
@@ -123,15 +123,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private void updateUI(FirebaseUser user) {
         if (user != null) {
-            String name = user.getDisplayName();
-            String email = user.getEmail();
-
-            text.append("Info: \n");
-            text.append(name + "\n");
-            text.append(email);
-
-            btn_login.setVisibility(View.INVISIBLE);
-            btn_logout.setVisibility(View.VISIBLE);
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
 
         } else {
             text.setText("Firebase Login \n");
