@@ -32,24 +32,7 @@ public class NewProductActivity extends AppCompatActivity {
     }
 
     private void salvar() {
-        String nome = etProduto.getText().toString();
-        String camisa = etQuantidade.getText().toString();
 
-        if (nome.isEmpty()||camisa.isEmpty()) {
-            AlertDialog.Builder alerta = new AlertDialog.Builder(this);
-            alerta.setIcon(android.R.drawable.ic_dialog_alert);
-            alerta.setTitle(getString(R.string.txtAlerta));
-            alerta.setMessage(getString(R.string.txtAlertaProduto));
-            alerta.setPositiveButton("OK", null);
-            alerta.show();
-        } else {
-            Produto produto = new Produto();
-            produto.setNome(nome);
-            produto.setQuantidade(Integer.valueOf(camisa));
-            produto.setIdLista(getIntent().getExtras().getInt("idLista"));
-            ProdutoDAO.inserirProduto(this, produto);
-            this.finish();
-        }
 
     }
 }

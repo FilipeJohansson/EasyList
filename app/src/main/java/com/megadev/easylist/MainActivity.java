@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private ListView lvListas;
     private TextView toolbar;
+    private FloatingActionButton fab;
 
     private GoogleSignInClient mGoogleSignInClient;
 
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
+        fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,11 +64,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                Lista lista = (Lista) adapterView.getItemAtPosition(i);
-
-                Intent intent = new Intent(MainActivity.this, MainListActivity.class);
-                intent.putExtra("idLista", lista.getId());
-                startActivity(intent);
             }
         });
 
@@ -91,18 +87,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void excluir(final Lista lista) {
-        AlertDialog.Builder alerta = new AlertDialog.Builder(this);
-        alerta.setTitle(getString(R.string.txtExcluir) + " " + lista.getNome());
-        alerta.setMessage(getString(R.string.txtConfirmaExclusao));
-        alerta.setNeutralButton((getString(R.string.btnCancelar)), null);
-        alerta.setPositiveButton((getString(R.string.btnConfirmar)), new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                ListaDAO.excluirTime(MainActivity.this, lista.getId());
-                carregarLista();
-            }
-        });
-        alerta.show();
+
 
     }
 
@@ -151,20 +136,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void carregarLista() {
-        List<Lista> lista = ListaDAO.getListas(this);
 
-        if (lista.size() == 0) {
-            lvListas.setEnabled(false);
-            Lista fake = new Lista();
-            fake.setNome(getString(R.string.txtListaVazia));
-            lista.add(fake);
-        } else {
-            lvListas.setEnabled(true);
-        }
-
-        AdapterLista adapter = new AdapterLista(this, lista);
-
-        lvListas.setAdapter(adapter);
 
     }
 
