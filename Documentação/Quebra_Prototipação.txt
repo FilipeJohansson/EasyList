@@ -1,0 +1,15 @@
+*Quebrar os pontos da prototipação para estarmos cientes de quais são as prioridades*
+
+=> Tela de inicialização do app [  ]
+
+=> Tela de listas criadas/pesquisa [  ]
+
+=> Tela dentro da lista [  ]
+
+=> Tela retorno de pesquisa [  ]
+
+=> Tela de cadastro de produtos [  ]
+
+=> Tela de edição de lista [  ]
+
+=> Tela de compartilhamento de lista [  ]

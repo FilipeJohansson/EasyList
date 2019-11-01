@@ -1,0 +1,8 @@
+Cenário problema:
+Nosso software vem para ajudar aquelas pessoas que gostariam de ter suas compras mais organizadas e em mãos.
+
+Proposta de valor:
+1. Qual é o público-alvo (que irá utilizar o software)? Pessoas de qualquer idade que precisam fazer compras
+2. Quais são as necessidades de software da organização? Um smartphone
+3. Quais são as soluções que a organização usa atualmente? Papel, que pode se perder facilmente. Porém é rápido de se fazer.
+4. O que poderia fazer com que a solução do seu time fosse diferenciada? Uma melhor interface para o usuário. Facilitando assim a aderência.

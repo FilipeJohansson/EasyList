@@ -1,0 +1,43 @@
+Viabilidade organizacional: a solução beneficia à organização? Aderência ao uso da solução por parte dos usuários, a solução está
+alinhada com os objetivos estratégicos, há compreensão e suporte da organização, entre outros.
+        =>        A aplicação irá beneficiar seus usuários ajudando-os a se organizarem e a terem mais agilidade em suas compras.
+                Além disso, a aplicação é de fácil aderência para qualquer usuário. Sendo simples para qualquer pessoa utilizar.
+
+
+
+
+Viabilidade técnica: o suporte técnico oferecido pela organização para o desenvolvimento do projeto é viável? Restrições da
+equipe ou da tecnologia, necessidade de investimento, entre outros.
+        =>        Temos uma equipe capacitada para realizar o desenvolvimento deste projeto.
+                O tempo necessário para desenvolvimento poderá ser um empecilho. Além de um computador que comporte a ferramenta Android Studio.
+                Não se faz necessário investimentos no momento.
+
+
+
+
+Viabilidade de cronograma: atividades levantadas x tempo estimado para realizá-las, é viável? Definição de marcos do projeto e
+impacto de atrasos.
+        =>        O tempo poderá ser um empecilho para este projeto. 
+                Iremos trabalhar inicialmente com os requisitos mais importantes, para depois trabalharmos com os requisitos restantes.
+                Desta forma iremos entregar dentro do prazo nossa aplicação em funcionamento.
+
+
+
+
+Outros:
+
+
+Viabilidade operacional: a solução é adequada à organização? Requisitos da solução (o que o cliente espera que o sistema faça).
+        =>        O cliente espera que possa criar uma lista de produtos para facilitar em sua organização e a terem mais agilidade em suas compras.
+
+
+
+
+Viabilidade econômica: custo de desenvolvimento x benefícios após implementação do projeto é viável?
+        =>        O projeto inicialmente não possui nenhum custo.
+
+
+
+
+Viabilidade legal, cultural, marketing, estre outros.
+        =>        Todas as imagens serão de autoria própria.

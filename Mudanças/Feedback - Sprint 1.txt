@@ -1,0 +1,13 @@
+- Anexar a apresentação que o time realizou em aula. Permitir que todos os membros do time possam editar o bitbucket. Incluir todos os PAs.
+
+- Revisar a escrita. Tornar o texto mais formal e, também, a ideia mais clara, como se estivesse entregando o documento a um cliente. Exemplo: "O projeto visa atender o processo de lista de compras para produtos. A aplicação tem como objetivo servir de auxílio à memória, de forma que o usuário possa recordar, manter lista de itens e recuperá-los no momento de uma compra..."
+
+- Se algum recurso for necessário para o bom andamento do projeto, o SM deve manifestar aos PAs até o início da Sprint 2.
+
+- Na visão geral, deixar evidente a razão pela qual o usuário optaria por esta aplicação no lugar de uma agenda com seus recursos, por exemplo. Neste sentido, vale fazer a análise competitiva, investigar se existe aplicação similar ou próxima, destacar os pontos positivos e pontos de obstáculo. Ao realizar a análise competitiva, é possível perceber diferenciais da proposta!
+
+- O time deve manter o foco nos requisitos nesta ordem: essenciais, importantes e desejáveis. Deve, ainda, definir a ordem de atendimento conforme necessidades dos potenciais usuários(personas definidas).
+Segue uma sugenstão de livro sobra Histórias de Usuário - http://www.wildtech.com.br/historias-de-usuario
+Feedbacks PAs:
+	- Ponto de destaque: viés ambiental (substituição de papel) e aplicativo parece ser simples de usar.
+	- Pontos de atenção: classificar requisitos em "Essencial, "Importante" e "Desejável" e estratégia de priorização. Foi mencionada a IDE AndroidStudio, falta identificar a linguagem a ser utilizada(Kotlin ou Java) e base de dados(SQLite ou Firebase).

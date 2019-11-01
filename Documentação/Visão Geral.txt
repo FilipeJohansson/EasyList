@@ -1,0 +1,39 @@
+** Anexar a apresentação que o time realizou em aula.
+** Revisar a escrita. Tornar o texto mais formal e, também, a ideia mais clara, como se estivesse entregando o
+documento a um cliente. Exemplo: O projeto visa atender o processo de lista de compras de produtos. A aplicação 
+tem como objetivo servir de auxílio a memória, de forma que o usuário possa recordar, manter lista de itens e 
+recuperá-los no momento de uma compra...
+** Se algum recurso for necessário para o bom andamento do projeto, manifestar. 
+** Deixar evidente na Visão geral a razão pela qual o usuário optaria por esta aplicação no lugar de um agenda 
+com seus recursos, por exemplo. Neste sentido vale fazer a análise competitiva, investigar se existe aplicação 
+similar ou próxima, destacar os pontos positivos e prontos de obstáculo. Ao realizar a análise competitiva é 
+possível perceber diferenciais da proposta!
+** O time deve manter foco nos requisitos neste ordem: essenciais, importantes e desejáveis. O time deve definir 
+a ordem e necessidade conforme necessidades dos potenciais usuários (as personas definidas).
+
+
+Visão geral (foco na proposta de “solução” do novo sistema):
+1. Processo que o novo sistema poderá apoiar -como poderá atender as necessidades da organização e do público-alvo.
+    Nosso projeto facilitará para as pessoas em gerirem uma lista de compras.
+    
+2. Objetivos – finalidade do novo sistema.
+    Melhorar a vida das pessoas. Ajudar a não se esquecerem mais de itens que precisam comprar.    
+    
+3. Necessidades – itens necessários para desenvolvimento, teste e utilização do novo sistema.
+    AndroidStudio, SmartPhone
+
+4. Restrições/limitações – problemas podem surgir e propostas para resolução.
+    Pode acabar surgindo muitas tarefas a serem feitas.
+    A proposta para mitigar este ponto, é sentarmos e estudarmos quais itens são os principais para a aplicação.
+
+5. Reuso e integração - se exisitir sistemas de apoio, como estes podem se relacionar ou integrar com o novo sistema.
+    Não se encaixa
+
+6. Informações - dados que o novo sistema deverá manipular.
+    Login, dados inseridos pelo usuário (nome do produto, quantidade).
+
+7. Não faz parte do escopo do projeto - necessidades o novo software não conseguirá atender e justificativa das razões.
+    Valores e entregas de produtos.
+
+
+

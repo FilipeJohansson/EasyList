@@ -1,0 +1,58 @@
+Itens com * = requisitos primários
+
+=> Req. Funcionais
+    ===> Req. Não-Funcionais
+
+
+        => Cadastro de produto no banco
+                ===> Não pode ter produto sem categoria
+                ===> Cada produto deverá ter o seu identificador único
+
+
+        => Criar lista para a adição de produtos *
+                ===> O nome da lista é obrigatório
+                ===> Não pode ter duas listas com o mesmo nome
+
+
+        => Editar Lista *
+                ===> O nome da lista não pode ser vazio
+                ===> Não pode ter duas listas com o mesmo nome
+
+
+        => Excluir Lista
+                ===> Todos os produtos da lista devem ser excluídos
+
+
+        => Excluir produto de uma lista *
+                ===> Excluir também a quantidade do produto
+
+
+        => Adicionar produtos na lista *
+                ===> Quantidade minima de produto deve ser 1
+                ===> Nome do produto não pode estar vazio
+                ===> Não poderá haver produtos duplicados na mesma lista, porém pode ter mais de uma quantidade
+                ===> Não poderá haver produtos com quantidades negativa
+                ===> Não haverá lista sem produtos
+                ===> Salvar produtos personalizados
+                ===> Permitir a entrada de produtos não cadastrados em banco
+
+
+        => Editar produto na lista
+                ===> Quantidade minima de produto deve ser 1 e máximo 99
+                ===> Nome do produto não pode estar vazio
+                ===> Não poderá haver produtos duplicados na mesma lista, porém pode ter mais de uma quantidade
+                ===> Não poderá haver produtos com quantidades negativa
+                ===> Não haverá lista sem produtos
+                ===> Permitir a entrada de produtos não cadastrados em banco                
+
+
+        => Consultar listas
+                ===> Todas as listas
+                ===> Por nome
+                ===> Por produto
+        
+        => Pesquisar produtos dentro de uma lista já criada
+                ===> Por nome
+
+        => Compartilhar Lista Criada
+                ===> Gerar link de compartilhamento

@@ -1,0 +1,9 @@
+UC1 - Eu, Nina, como responsavel pelas compras da casa, gostaria de um sistema capaz de guardar todos os itens que preciso comprar cada vez que vou ao mercado.
+UC2 - Eu, Nina, como responsavel pelas compras da casa, gostaria que fosse possível exibir todas as minhas listas e pesquisar as minhas listas salvas pelo nome.
+UC3 - Eu, Nina, como responsavel pelas compras da casa, gostaria que o sistema possuísse produtos prontos para eu apenas pesquisar e adicionar à lista.
+UC4 - Eu, Nina, como responsavel pelas compras da casa, gostaria que o sistema permitisse o cadastro de produtos que não estão disponíveis
+
+UC5 - Eu, Bruno, gostaria que fosse possível importar uma lista feita por outro usuário
+UC6 - Eu, Bruno, como assistente adm, gostaria que fosse possível editar uma lista salva anteriormente
+UC7 - Eu, Bruno. como assistente adm, gostaria que fosse possível definir a quantidade de um determinado produto na lista
+UC8 - Eu, Bruno, como assistente adm, gostaria que fosse possível filtrar os produtos dentro de uma lista pelo nome
