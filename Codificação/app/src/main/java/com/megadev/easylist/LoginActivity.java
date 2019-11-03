@@ -1,5 +1,6 @@
 package com.megadev.easylist;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,6 +24,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class LoginActivity extends AppCompatActivity {
 
     static final int GOOGLE_SIGN = 779;
@@ -31,6 +36,8 @@ public class LoginActivity extends AppCompatActivity {
     TextView text;
     ProgressBar progressBar;
     GoogleSignInClient mGoogleSignInClient;
+
+    ApiInterface apiInterface;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,7 +113,9 @@ public class LoginActivity extends AppCompatActivity {
 
                         FirebaseUser user = mAuth.getCurrentUser();
 
-                        updateUI(user);
+                        String UID_USUARIO = mAuth.getUid().trim();
+
+                        saveUser(UID_USUARIO, user);
 
                     } else {
                         progressBar.setVisibility(View.INVISIBLE);
@@ -121,6 +130,48 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    private void saveUser(final String UID_USUARIO, final FirebaseUser user) {
+        apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        Call<User> call = apiInterface.saveUser(UID_USUARIO);
+
+        call.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(@NonNull Call<User> call, @NonNull Response<User> response) {
+
+                if (response.isSuccessful() && response.body() != null) {
+                    Boolean success = response.body().getSuccess();
+
+                    if (success) {
+                        updateUI(user);
+
+                    } else {
+                        user.delete();
+
+                        Toast.makeText(LoginActivity.this,
+                                response.body().getMessage(),
+                                Toast.LENGTH_SHORT).show();
+                        // if error, still in this activity
+
+                    }
+
+                }
+
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<User> call, @NonNull Throwable t) {
+
+                user.delete();
+
+                Toast.makeText(LoginActivity.this,
+                        t.getLocalizedMessage(),
+                        Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+    }
+
     private void updateUI(FirebaseUser user) {
         if (user != null) {
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
@@ -132,14 +183,6 @@ public class LoginActivity extends AppCompatActivity {
             btn_login.setVisibility(View.VISIBLE);
 
         }
-
-    }
-
-    void Logout() {
-        FirebaseAuth.getInstance().signOut();
-        mGoogleSignInClient.signOut()
-                .addOnCompleteListener(this,
-                        task -> updateUI(null));
 
     }
 

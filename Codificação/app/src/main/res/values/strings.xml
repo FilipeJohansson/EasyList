@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">EasyList</string>
+    <string name="by">by <bold>MegaDev</bold></string>
+    <string name="megadev">MegaDev</string>
 
     <string name="txtSalvar">Salvar</string>
     <string name="txtListas">Lista de Compras</string>

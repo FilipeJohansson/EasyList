@@ -8,9 +8,15 @@ import retrofit2.http.POST;
 public interface ApiInterface {
 
     @FormUrlEncoded
-    @POST("save.php")
+    @POST("save_list.php")
     Call<Lista> saveList(
             @Field("NME_LISTA") String NME_LISTA,
+            @Field("UID_USUARIO") String UID_USUARIO
+    );
+
+    @FormUrlEncoded
+    @POST("save_user.php")
+    Call<User> saveUser(
             @Field("UID_USUARIO") String UID_USUARIO
     );
 
