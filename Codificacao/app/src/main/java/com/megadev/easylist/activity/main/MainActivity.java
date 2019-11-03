@@ -64,12 +64,9 @@ public class MainActivity extends AppCompatActivity implements MainView {
         mGoogleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions);
 
         fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, NewListActivity.class);
-                startActivity(i);
-            }
+        fab.setOnClickListener(view -> {
+            Intent i = new Intent(MainActivity.this, NewListActivity.class);
+            startActivity(i);
         });
 
         presenter = new MainPresenter(this);
@@ -84,17 +81,24 @@ public class MainActivity extends AppCompatActivity implements MainView {
             Toast.makeText(this, nome_lista, Toast.LENGTH_SHORT).show();
         });
 
-        toolbar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Logout();
-
-            }
-        });
+        toolbar.setOnClickListener(view -> Logout());
 
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        String UID_USUARIO = mAuth.getUid().trim();
+
+        presenter = new MainPresenter(this);
+        presenter.getData(UID_USUARIO);
+
+        refreshLayout.setOnRefreshListener(
+                () -> presenter.getData(UID_USUARIO)
+        );
+
+    }
 
     private void updateUI(FirebaseUser currentUser) {
 
@@ -137,4 +141,11 @@ public class MainActivity extends AppCompatActivity implements MainView {
     public void onErrorLoading(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
+
+    private void refreshList() {
+
+
+
+    }
+
 }
