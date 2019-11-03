@@ -1,4 +1,4 @@
-package com.megadev.easylist;
+package com.megadev.easylist.activity;
 
 import android.os.Bundle;
 import android.view.View;
@@ -7,6 +7,8 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.megadev.easylist.R;
 
 public class NewProductActivity extends AppCompatActivity {
 

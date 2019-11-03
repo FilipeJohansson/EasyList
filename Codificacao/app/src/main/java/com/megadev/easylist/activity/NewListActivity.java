@@ -1,4 +1,4 @@
-package com.megadev.easylist;
+package com.megadev.easylist.activity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -17,6 +17,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.megadev.easylist.R;
+import com.megadev.easylist.api.ApiClient;
+import com.megadev.easylist.api.ApiInterface;
+import com.megadev.easylist.model.Lista;
 
 public class NewListActivity extends AppCompatActivity {
 

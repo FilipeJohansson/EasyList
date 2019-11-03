@@ -1,4 +1,7 @@
-package com.megadev.easylist;
+package com.megadev.easylist.api;
+
+import com.megadev.easylist.model.Lista;
+import com.megadev.easylist.model.User;
 
 import retrofit2.Call;
 import retrofit2.http.Field;

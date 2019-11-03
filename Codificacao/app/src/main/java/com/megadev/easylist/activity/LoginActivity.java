@@ -1,4 +1,4 @@
-package com.megadev.easylist;
+package com.megadev.easylist.activity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -10,7 +10,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -23,6 +22,10 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.megadev.easylist.R;
+import com.megadev.easylist.api.ApiClient;
+import com.megadev.easylist.api.ApiInterface;
+import com.megadev.easylist.model.User;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -32,8 +35,7 @@ public class LoginActivity extends AppCompatActivity {
 
     static final int GOOGLE_SIGN = 779;
     FirebaseAuth mAuth;
-    Button btn_login, btn_logout;
-    TextView text;
+    Button btn_login;
     ProgressBar progressBar;
     GoogleSignInClient mGoogleSignInClient;
 
@@ -45,8 +47,6 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         btn_login = findViewById(R.id.login);
-        btn_logout = findViewById(R.id.logout);
-        text = findViewById(R.id.text);
         progressBar = findViewById(R.id.progress_circular);
 
         mAuth = FirebaseAuth.getInstance();
@@ -60,7 +60,6 @@ public class LoginActivity extends AppCompatActivity {
         mGoogleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions);
 
         btn_login.setOnClickListener(v -> SignInGoogle());
-        btn_logout.setOnClickListener(v -> Logout());
 
         if (mAuth.getCurrentUser() != null) {
             FirebaseUser user = mAuth.getCurrentUser();
@@ -176,11 +175,6 @@ public class LoginActivity extends AppCompatActivity {
         if (user != null) {
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
-
-        } else {
-            text.setText("Firebase Login \n");
-            btn_logout.setVisibility(View.INVISIBLE);
-            btn_login.setVisibility(View.VISIBLE);
 
         }
 

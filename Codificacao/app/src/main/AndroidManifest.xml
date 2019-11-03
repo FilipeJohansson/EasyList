@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".LoginActivity"
+        <activity android:name=".activity.LoginActivity"
             android:label="EasyList"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -21,17 +21,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name=".NewProductActivity"
+            android:name=".activity.NewProductActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".NewListActivity"
+            android:name=".activity.NewListActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".MainListActivity"
+            android:name=".activity.MainListActivity"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
