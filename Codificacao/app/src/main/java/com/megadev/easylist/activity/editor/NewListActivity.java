@@ -1,4 +1,4 @@
-package com.megadev.easylist.activity;
+package com.megadev.easylist.activity.editor;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -22,7 +22,7 @@ import com.megadev.easylist.api.ApiClient;
 import com.megadev.easylist.api.ApiInterface;
 import com.megadev.easylist.model.Lista;
 
-public class NewListActivity extends AppCompatActivity {
+public class NewListActivity extends AppCompatActivity implements EditorView {
 
     private FirebaseAuth mAuth;
 
@@ -31,12 +31,14 @@ public class NewListActivity extends AppCompatActivity {
 
     ProgressDialog progressDialog;
 
-    ApiInterface apiInterface;
+    EditorPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_list);
+
+        presenter = new EditorPresenter(this);
 
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
@@ -51,13 +53,13 @@ public class NewListActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String NME_LISTA = etNomeLista.getText().toString();
-                String UID_USUARIO = mAuth.getUid().trim();
+                FirebaseUser user = mAuth.getCurrentUser();
 
                 if (NME_LISTA.isEmpty()) {
                     etNomeLista.setError("Por favor, digite um nome para a lista");
 
                 } else {
-                    saveList(NME_LISTA, UID_USUARIO);
+                    presenter.saveList(NME_LISTA, user);
 
                 }
             }
@@ -73,51 +75,6 @@ public class NewListActivity extends AppCompatActivity {
         updateUI(currentUser);
     }
 
-    private void saveList(final String NME_LISTA, final String UID_USUARIO) {
-        progressDialog.show();
-
-        apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
-        Call<Lista> call = apiInterface.saveList(NME_LISTA, UID_USUARIO);
-
-        call.enqueue(new Callback<Lista>() {
-            @Override
-            public void onResponse(@NonNull Call<Lista> call, @NonNull Response<Lista> response) {
-                progressDialog.dismiss();
-
-                if (response.isSuccessful() && response.body() != null) {
-                    Boolean success = response.body().getSuccess();
-
-                    if (success) {
-                        Toast.makeText(NewListActivity.this,
-                                response.body().getMessage(),
-                                Toast.LENGTH_SHORT).show();
-                        finish(); // back to main activity
-
-                    } else {
-                        Toast.makeText(NewListActivity.this,
-                                response.body().getMessage(),
-                                Toast.LENGTH_SHORT).show();
-                        // if error, still in this activity
-
-                    }
-
-                }
-
-            }
-
-            @Override
-            public void onFailure(@NonNull Call<Lista> call, @NonNull Throwable t) {
-                progressDialog.dismiss();
-
-                Toast.makeText(NewListActivity.this,
-                        t.getLocalizedMessage(),
-                        Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
-    }
-
     private void updateUI(FirebaseUser currentUser) {
 
         if (currentUser == null) {
@@ -128,6 +85,31 @@ public class NewListActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void showProgress() {
+        progressDialog.show();
+    }
+
+    @Override
+    public void hideProgress() {
+    progressDialog.dismiss();
+    }
+
+    @Override
+    public void onAddSuccess(String message, FirebaseUser user) {
+        Toast.makeText(NewListActivity.this,
+                message,
+                Toast.LENGTH_SHORT).show();
+        finish(); // back to main activity
+    }
+
+    @Override
+    public void onAddError(String message, FirebaseUser user) {
+        Toast.makeText(NewListActivity.this,
+                message,
+                Toast.LENGTH_SHORT).show();
+        // if error, still in this activity
+    }
 }
 
 

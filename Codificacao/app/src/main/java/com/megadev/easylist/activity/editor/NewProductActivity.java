@@ -1,4 +1,4 @@
-package com.megadev.easylist.activity;
+package com.megadev.easylist.activity.editor;
 
 import android.os.Bundle;
 import android.view.View;

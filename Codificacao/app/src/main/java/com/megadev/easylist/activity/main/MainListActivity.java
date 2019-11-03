@@ -1,4 +1,4 @@
-package com.megadev.easylist.activity;
+package com.megadev.easylist.activity.main;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.megadev.easylist.R;
+import com.megadev.easylist.activity.editor.NewProductActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 

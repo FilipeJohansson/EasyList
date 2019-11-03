@@ -1,6 +1,5 @@
-package com.megadev.easylist.activity;
+package com.megadev.easylist.activity.editor;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,15 +22,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.megadev.easylist.R;
-import com.megadev.easylist.api.ApiClient;
-import com.megadev.easylist.api.ApiInterface;
-import com.megadev.easylist.model.User;
+import com.megadev.easylist.activity.main.MainActivity;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity implements  EditorView {
 
     static final int GOOGLE_SIGN = 779;
     FirebaseAuth mAuth;
@@ -39,12 +32,14 @@ public class LoginActivity extends AppCompatActivity {
     ProgressBar progressBar;
     GoogleSignInClient mGoogleSignInClient;
 
-    ApiInterface apiInterface;
+    EditorPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        presenter = new EditorPresenter(this);
 
         btn_login = findViewById(R.id.login);
         progressBar = findViewById(R.id.progress_circular);
@@ -114,7 +109,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         String UID_USUARIO = mAuth.getUid().trim();
 
-                        saveUser(UID_USUARIO, user);
+                        presenter.saveUser(UID_USUARIO, user);
 
                     } else {
                         progressBar.setVisibility(View.INVISIBLE);
@@ -129,48 +124,6 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private void saveUser(final String UID_USUARIO, final FirebaseUser user) {
-        apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
-        Call<User> call = apiInterface.saveUser(UID_USUARIO);
-
-        call.enqueue(new Callback<User>() {
-            @Override
-            public void onResponse(@NonNull Call<User> call, @NonNull Response<User> response) {
-
-                if (response.isSuccessful() && response.body() != null) {
-                    Boolean success = response.body().getSuccess();
-
-                    if (success) {
-                        updateUI(user);
-
-                    } else {
-                        user.delete();
-
-                        Toast.makeText(LoginActivity.this,
-                                response.body().getMessage(),
-                                Toast.LENGTH_SHORT).show();
-                        // if error, still in this activity
-
-                    }
-
-                }
-
-            }
-
-            @Override
-            public void onFailure(@NonNull Call<User> call, @NonNull Throwable t) {
-
-                user.delete();
-
-                Toast.makeText(LoginActivity.this,
-                        t.getLocalizedMessage(),
-                        Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
-    }
-
     private void updateUI(FirebaseUser user) {
         if (user != null) {
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
@@ -178,6 +131,31 @@ public class LoginActivity extends AppCompatActivity {
 
         }
 
+    }
+
+    @Override
+    public void showProgress() {
+        progressBar.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideProgress() {
+        progressBar.setVisibility(View.INVISIBLE);
+    }
+
+    @Override
+    public void onAddSuccess(String message, FirebaseUser user) {
+        updateUI(user);
+    }
+
+    @Override
+    public void onAddError(String message, FirebaseUser user) {
+        user.delete();
+
+        Toast.makeText(LoginActivity.this,
+                message,
+                Toast.LENGTH_SHORT).show();
+        // if error, still in this activity
     }
 
 }
