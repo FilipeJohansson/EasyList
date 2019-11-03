@@ -16,7 +16,6 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainListActivity extends AppCompatActivity {
 
     private ListView lvProdutos;
-    private TextView tvNomeLista;
     FloatingActionButton fab;
 
     @Override
@@ -25,7 +24,6 @@ public class MainListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_list);
 
         lvProdutos = findViewById(R.id.lvProdutos);
-        tvNomeLista = findViewById(R.id.tvNomeLista);
 
         fab = findViewById(R.id.fab);
         fab.setOnClickListener(view -> {

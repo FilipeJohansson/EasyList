@@ -3,9 +3,8 @@ package com.megadev.easylist.activity.main;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -19,13 +18,26 @@ import com.megadev.easylist.activity.editor.NewListActivity;
 import com.megadev.easylist.model.Lista;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.List;
 
-    private FirebaseAuth mAuth;
-    private ListView lvListas;
+public class MainActivity extends AppCompatActivity implements MainView {
+
     private TextView toolbar;
     private FloatingActionButton fab;
+    private RecyclerView recyclerView;
+    private SwipeRefreshLayout refreshLayout;
+
+    FirebaseAuth mAuth;
+
+    MainPresenter presenter;
+    MainAdapter adapter;
+    MainAdapter.ItemClickListener itemClickListener;
+
+    List<Lista> lista;
 
     private GoogleSignInClient mGoogleSignInClient;
 
@@ -34,11 +46,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
+        String UID_USUARIO = mAuth.getUid().trim();
 
-        lvListas = findViewById(R.id.lvListas);
         toolbar = findViewById(R.id.toolbar_title);
+        refreshLayout = findViewById(R.id.refreshLayout);
+        recyclerView = findViewById(R.id.recycleView);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions
                 .Builder()
@@ -57,19 +72,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        lvListas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        presenter = new MainPresenter(this);
+        presenter.getData(UID_USUARIO);
 
-            }
-        });
+        refreshLayout.setOnRefreshListener(
+                () -> presenter.getData(UID_USUARIO)
+        );
 
-        lvListas.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                excluir((Lista) adapterView.getItemAtPosition(i));
-                return true;
-            }
+        itemClickListener = ((view, position) -> {
+            String nome_lista = lista.get(position).getNME_LISTA();
+            Toast.makeText(this, nome_lista, Toast.LENGTH_SHORT).show();
         });
 
         toolbar.setOnClickListener(new View.OnClickListener() {
@@ -83,44 +95,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void excluir(final Lista lista) {
-
-
-    }
-
-    /*@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }*/
-
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        updateUI(currentUser);
-
-        carregarLista();
-    }
 
     private void updateUI(FirebaseUser currentUser) {
 
@@ -132,11 +106,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void carregarLista() {
-
-
-    }
-
     void Logout() {
         FirebaseAuth.getInstance().signOut();
         mGoogleSignInClient.signOut()
@@ -145,4 +114,27 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void showLoading() {
+        refreshLayout.setRefreshing(true);
+    }
+
+    @Override
+    public void hideLoading() {
+        refreshLayout.setRefreshing(false);
+    }
+
+    @Override
+    public void onGetResult(List<Lista> listas) {
+        adapter = new MainAdapter(this, listas, itemClickListener);
+        adapter.notifyDataSetChanged();
+        recyclerView.setAdapter(adapter);
+
+        lista = listas;
+    }
+
+    @Override
+    public void onErrorLoading(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
 }

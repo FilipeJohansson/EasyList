@@ -36,6 +36,8 @@
     <string name="login_com_google">Login com Google</string>
     <string name="fazer_login">Fazer Login</string>
     <string name="logout">Sair</string>
+    <string name="listName">Churrasco</string>
+    <string name="go_to_list">go to list</string>
 
 
 </resources>
