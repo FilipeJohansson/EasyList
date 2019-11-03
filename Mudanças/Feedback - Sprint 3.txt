@@ -1,8 +1,0 @@
-- Trabalhar na qualidade da documentação. Indicamos melhorias para organização e qualificação. Valorizar o produto.
-- Destacar os diferenciais do aplicativo em relação aos existentes no mercado. O time trouxe boas ideias no início, mas não é possível identificar se incorporaram ao projeto.
-- No sentido que melhorar os dois itens acima, uma pesquisa de mercado(análise competitiva) pode melhorar a defesa do produto. Comparar com outros existentes ou similares é a melhor estratégia para potencializar o projeto quanto a diferenciais da proposta de valor aos usuários.
-- Time perdeu dois integrantes, o que pode afetar a irganização do mesmo e o cumprimento das tarefas, mas é um time que tem muita competência e habilidade técnica, o que sinaliza que tem competência para uma ótima entrega do produto. É preciso que o time se comprometa e alinhe as responsabilidades.
-- O projeto está espalhado em três diferentes locais (Github, Bitbucket e Trello) o que pode acarretar em desorganização do time. Manter o foco e concentrar energia em apenas uma ou duas ferramentas de trabalho.
-
-**Não encontramos a documentação no git
-**Um único colaborador no git
