@@ -1,9 +1,60 @@
-UC1 - Eu, Nina, como responsavel pelas compras da casa, gostaria de um sistema capaz de guardar todos os itens que preciso comprar cada vez que vou ao mercado.
-UC2 - Eu, Nina, como responsavel pelas compras da casa, gostaria que fosse possível exibir todas as minhas listas e pesquisar as minhas listas salvas pelo nome.
-UC3 - Eu, Nina, como responsavel pelas compras da casa, gostaria que o sistema possuísse produtos prontos para eu apenas pesquisar e adicionar à lista.
-UC4 - Eu, Nina, como responsavel pelas compras da casa, gostaria que o sistema permitisse o cadastro de produtos que não estão disponíveis
+US001 - Cadastro de produto no banco
+Como: responsável pelas compras de casa
+Nina quer: ser capaz de cadastrar produtos que não estão disponíveis
+Para: poder tornar a lista mais pessoal e compreensível para ela
 
-UC5 - Eu, Bruno, gostaria que fosse possível importar uma lista feita por outro usuário
-UC6 - Eu, Bruno, como assistente adm, gostaria que fosse possível editar uma lista salva anteriormente
-UC7 - Eu, Bruno. como assistente adm, gostaria que fosse possível definir a quantidade de um determinado produto na lista
-UC8 - Eu, Bruno, como assistente adm, gostaria que fosse possível filtrar os produtos dentro de uma lista pelo nome
+
+US002 - Criar Lista
+Como: responsável pelas compras de casa
+Nina quer: ser capaz de guardar todos itens que precisa comprar no mercado
+Para: manter controle dos itens necessários e otimizar sua ida ao mercado
+
+
+US003 - Editar Lista
+Como: quem faz as compras ocasionalmente pós serviço
+Bruno quer: ser capaz de editar uma lista já pré criada
+Para: melhor organizar suas listas por nome
+
+
+US004 - Excluir Lista
+Como: quem faz as compras ocasionalmente pós serviço
+Bruno quer: ser capaz apagara listas já criadas
+Para: abrir espaço e melhor organizar seu app
+
+
+US005 - Excluir Produto da Lista
+Como: quem faz as compras ocasionalmente pós serviço
+Bruno quer: ser capaz de apagar produtos de listas já criadas
+Para: não efetuar compras desnecessárias
+
+
+US006 - Adicionar produtos na lista
+Como: responsável pelas compras de casa
+Nina quer: ser capaz de utilizar produtos já existentes em sua lista
+Para: agilizar a criação da lisa
+
+
+US007 - Editar produto na lista
+Como: quem faz as compras ocasionalmente pós serviço
+Bruno quer: ser capaz de editar os produtos da lista
+E: definir a quantidade dos produtos da lista
+Para: não efetuar compras desnecessárias
+
+
+US008 - Consultar listas
+Como: responsável pelas compras de casa
+Nina quer: ser capaz de consultar todas suas listas 
+E: pesquisa-las pelo nome
+Para: maior agilidade ao consultar suas listas no mercado
+
+
+US009 - Pesquisar produtos dentro de uma lista já criada
+Como: quem faz as compras ocasionalmente pós serviço
+Bruno quer: ser capaz de filtrar os produtos dentro de uma lista pelo nome
+Para: que ao passar por um item no mercado possa verificar rapidamente se o mesmo está na lista evitando compras desnecessárias 
+
+
+US010 - Compartilhar/Importar Lista Criada
+Como: quem faz as compras ocasionalmente pós serviço
+Bruno quer: ser capaz de importar listas 
+Para: que sua esposa possa lhe mandar uma lista já pronta com o que falta na casa 
