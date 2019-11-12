@@ -624,9 +624,11 @@
     <string name="labelNome">Nome da Lista</string>
     <string name="labelQuantidade">Quantidade</string>
     <string name="listName">Churrasco</string>
+    <string name="lista">Lista</string>
     <string name="login_com_google">Login com Google</string>
     <string name="login_failed">"Login failed"</string>
     <string name="logout">Sair</string>
+    <string name="medida">2Kg</string>
     <string name="megadev">MegaDev</string>
     <string name="mtrl_chip_close_icon_content_description">Remove %1$s</string>
     <string name="password_toggle_content_description">Show password</string>
@@ -634,6 +636,7 @@
     <string name="path_password_eye_mask_strike_through" translatable="false">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_eye_mask_visible" translatable="false">M2,4.27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_strike_through" translatable="false">M3.27,4.27 L19.74,20.74</string>
+    <string name="product_name">Carne</string>
     <string name="project_id" translatable="false">easylist-3bc81</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
