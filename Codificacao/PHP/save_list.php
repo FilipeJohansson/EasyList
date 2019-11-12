@@ -1,32 +1,36 @@
 <?php
 
-  header("Context-type:application/json");
+  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $NME_LISTA = $_POST['NME_LISTA'];
+    $UID_USUARIO = $_POST['UID_USUARIO'];
+    $USER_ID = null;
 
-  require_once("connect.php");
+    require_once("connect.php");
 
-  $UID_USUARIO = $_GET['UID_USUARIO'];
-  $USER_ID = null;
+    $query = $pdo->prepare("SELECT ID_USUARIO FROM `usuario` WHERE `UID` = '$UID_USUARIO';");
+    $query->execute();
 
-  $query = $pdo->prepare("SELECT ID_USUARIO FROM `usuario` WHERE `UID` = '$UID_USUARIO';");
-  $query->execute();
+    while($ID = $query->fetch(PDO::FETCH_ASSOC)) {
+      $USER_ID = $ID['ID_USUARIO'];
 
-  while($ID = $query->fetch(PDO::FETCH_ASSOC)) {
-    $USER_ID = $ID['ID_USUARIO'];
+    }
 
-  }
+    $query = $pdo->prepare("INSERT INTO `lista` (NME_LISTA, ID_USUARIO) VALUES ('$NME_LISTA','$USER_ID');");
+    $query->execute();
 
-  $query = $pdo->prepare("SELECT ID_LISTA, NME_LISTA FROM `lista` WHERE `ID_USUARIO` = '$USER_ID';");
-  $query->execute();
+    if ($query) {
+      $response['success'] = true;
+      $response['message'] = "Successfully";
 
-  $response = array();
+    } else {
+      $response['success'] = false;
+      $response['message'] = "Failure";
 
-  while($row = $query->fetch(PDO::FETCH_ASSOC)) {
+    }
 
-    array_push($response,
-    array(
-      'ID_LISTA' =>$row['ID_LISTA'],
-      'NME_LISTA' =>$row['NME_LISTA'])
-    );
+  } else {
+    $response['success'] = false;
+    $response['message'] = "Error";
 
   }
 
