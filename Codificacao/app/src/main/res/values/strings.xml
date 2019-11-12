@@ -38,6 +38,9 @@
     <string name="logout">Sair</string>
     <string name="listName">Churrasco</string>
     <string name="go_to_list">go to list</string>
+    <string name="product_name">Carne</string>
+    <string name="medida">2Kg</string>
+    <string name="lista">Lista</string>
 
 
 </resources>

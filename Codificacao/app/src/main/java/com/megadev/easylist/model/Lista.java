@@ -14,19 +14,14 @@ public class Lista {
     @Expose
     @SerializedName("VLR_TOTAL") private float VLR_TOTAL;
     @Expose
-    @SerializedName("UID_USUARIO") private String UID_USUARIO;
+    @SerializedName("ID_USUARIO") private int ID_USUARIO;
     @Expose
     @SerializedName("success") private Boolean success;
     @Expose
     @SerializedName("message") private String message;
 
-
     public int getID_LISTA() {
         return ID_LISTA;
-    }
-
-    public void setID_LISTA(int ID_LISTA) {
-        this.ID_LISTA = ID_LISTA;
     }
 
     public String getNME_LISTA() {
@@ -45,27 +40,20 @@ public class Lista {
         this.VLR_TOTAL = VLR_TOTAL;
     }
 
-    public String getUID_USUARIO() {
-        return UID_USUARIO;
+    public int getID_USUARIO() {
+        return ID_USUARIO;
     }
 
-    public void setUID_USUARIO(String UID_USUARIO) {
-        this.UID_USUARIO = UID_USUARIO;
+    public void setID_USUARIO(int ID_USUARIO) {
+        this.ID_USUARIO = ID_USUARIO;
     }
 
     public Boolean getSuccess() {
         return success;
     }
 
-    public void setSuccess(Boolean success) {
-        this.success = success;
-    }
-
     public String getMessage() {
         return message;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
-    }
 }

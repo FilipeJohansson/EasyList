@@ -1,25 +1,8 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\filip\\AndroidStudioProjects\\EasyList\\Codificacao\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-be\\values-be.xml",
+            "outputFile": "C:\\Users\\filip\\Desktop\\EngSoftware\\Codificacao\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-be\\values-be.xml",
             "map": [
-                {
-                    "source": "C:\\Users\\filip\\.gradle\\caches\\transforms-2\\files-2.1\\27c2f9067560f9efbec7dcc5dfb056a1\\jetified-play-services-basement-17.0.0\\res\\values-be\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "204",
-                        "endOffsets": "451"
-                    },
-                    "to": {
-                        "startLines": "37",
-                        "startColumns": "4",
-                        "startOffsets": "3996",
-                        "endColumns": "204",
-                        "endOffsets": "4196"
-                    }
-                },
                 {
                     "source": "C:\\Users\\filip\\.gradle\\caches\\transforms-2\\files-2.1\\d856a2ad07d784cae061be131eb0ba9a\\core-1.0.1\\res\\values-be\\values-be.xml",
                     "from": {
@@ -52,6 +35,23 @@
                         "startOffsets": "2834,2943,3137,3264,3376,3590,3718,3863,4201,4422,4531,4725,4855,5067,5256,5355,5447",
                         "endColumns": "108,193,126,111,213,127,144,132,220,108,193,129,211,188,98,91,107",
                         "endOffsets": "2938,3132,3259,3371,3585,3713,3858,3991,4417,4526,4720,4850,5062,5251,5350,5442,5550"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\filip\\.gradle\\caches\\transforms-2\\files-2.1\\5c24ce031169b006e8387c593e7538ed\\jetified-play-services-basement-17.0.0\\res\\values-be\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "204",
+                        "endOffsets": "451"
+                    },
+                    "to": {
+                        "startLines": "37",
+                        "startColumns": "4",
+                        "startOffsets": "3996",
+                        "endColumns": "204",
+                        "endOffsets": "4196"
                     }
                 },
                 {

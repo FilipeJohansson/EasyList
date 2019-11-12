@@ -20,7 +20,7 @@
             android:layout_gravity="center"
             android:paddingTop="26dp"
             android:paddingBottom="16dp"
-            android:text="@string/txtListas"
+            android:text="@string/lista"
             android:textAlignment="center"
             android:textColor="#47525E"
             android:textSize="24sp" />
@@ -42,13 +42,14 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipe_refresh"
+        android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/appBarLayout" >
+        android:layout_below="@id/appBarLayout"
+        android:layout_marginBottom="5dp">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycle_view"
+            android:id="@+id/recycleView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

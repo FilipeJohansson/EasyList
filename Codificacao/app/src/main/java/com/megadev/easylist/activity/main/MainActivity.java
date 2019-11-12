@@ -26,12 +26,13 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements MainView {
 
+    private FirebaseAuth mAuth;
+    private GoogleSignInClient mGoogleSignInClient;
+
     private TextView toolbar;
     private FloatingActionButton fab;
     private RecyclerView recyclerView;
     private SwipeRefreshLayout refreshLayout;
-
-    FirebaseAuth mAuth;
 
     MainPresenter presenter;
     MainAdapter adapter;
@@ -39,22 +40,12 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
     List<Lista> lista;
 
-    private GoogleSignInClient mGoogleSignInClient;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         mAuth = FirebaseAuth.getInstance();
-        String UID_USUARIO = mAuth.getUid().trim();
-
-        toolbar = findViewById(R.id.toolbar_title);
-        refreshLayout = findViewById(R.id.refreshLayout);
-        recyclerView = findViewById(R.id.recycleView);
-
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions
                 .Builder()
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -62,6 +53,14 @@ public class MainActivity extends AppCompatActivity implements MainView {
                 .build();
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions);
+
+        String UID_USUARIO = mAuth.getUid().trim();
+
+        toolbar = findViewById(R.id.toolbar_title);
+        refreshLayout = findViewById(R.id.refreshLayout);
+        recyclerView = findViewById(R.id.recycleView);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         fab = findViewById(R.id.fab);
         fab.setOnClickListener(view -> {
@@ -77,8 +76,15 @@ public class MainActivity extends AppCompatActivity implements MainView {
         );
 
         itemClickListener = ((view, position) -> {
-            String nome_lista = lista.get(position).getNME_LISTA();
-            Toast.makeText(this, nome_lista, Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, MainListActivity.class);
+
+            int sessionId = lista.get(position).getID_LISTA();
+
+            intent.putExtra("EXTRA_SESSION_ID", sessionId);
+            startActivity(intent);
+
+            /*String nome_lista = lista.get(position).getNME_LISTA();
+            Toast.makeText(this, nome_lista, Toast.LENGTH_SHORT).show();*/
         });
 
         toolbar.setOnClickListener(view -> Logout());
@@ -89,8 +95,10 @@ public class MainActivity extends AppCompatActivity implements MainView {
     protected void onStart() {
         super.onStart();
 
-        String UID_USUARIO = mAuth.getUid().trim();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        updateUI(currentUser);
 
+        String UID_USUARIO = mAuth.getUid().trim();
         presenter = new MainPresenter(this);
         presenter.getData(UID_USUARIO);
 
@@ -107,14 +115,6 @@ public class MainActivity extends AppCompatActivity implements MainView {
             startActivity(intent);
 
         }
-
-    }
-
-    void Logout() {
-        FirebaseAuth.getInstance().signOut();
-        mGoogleSignInClient.signOut()
-                .addOnCompleteListener(this,
-                        task -> updateUI(null));
 
     }
 
@@ -142,9 +142,11 @@ public class MainActivity extends AppCompatActivity implements MainView {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
-    private void refreshList() {
-
-
+    void Logout() {
+        FirebaseAuth.getInstance().signOut();
+        mGoogleSignInClient.signOut()
+                .addOnCompleteListener(this,
+                        task -> updateUI(null));
 
     }
 

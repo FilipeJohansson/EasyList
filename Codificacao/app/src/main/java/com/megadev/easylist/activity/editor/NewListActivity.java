@@ -49,19 +49,16 @@ public class NewListActivity extends AppCompatActivity implements EditorView {
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Criando Lista");
 
-        btnSalvar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String NME_LISTA = etNomeLista.getText().toString();
-                FirebaseUser user = mAuth.getCurrentUser();
+        btnSalvar.setOnClickListener(view -> {
+            String NME_LISTA = etNomeLista.getText().toString();
+            FirebaseUser user = mAuth.getCurrentUser();
 
-                if (NME_LISTA.isEmpty()) {
-                    etNomeLista.setError("Por favor, digite um nome para a lista");
+            if (NME_LISTA.isEmpty()) {
+                etNomeLista.setError("Por favor, digite um nome para a lista");
 
-                } else {
-                    presenter.saveList(NME_LISTA, user);
+            } else {
+                presenter.saveList(NME_LISTA, user);
 
-                }
             }
         });
     }
@@ -75,16 +72,6 @@ public class NewListActivity extends AppCompatActivity implements EditorView {
         updateUI(currentUser);
     }
 
-    private void updateUI(FirebaseUser currentUser) {
-
-        if (currentUser == null) {
-            Intent intent = new Intent(NewListActivity.this, LoginActivity.class);
-            startActivity(intent);
-
-        }
-
-    }
-
     @Override
     public void showProgress() {
         progressDialog.show();
@@ -92,7 +79,7 @@ public class NewListActivity extends AppCompatActivity implements EditorView {
 
     @Override
     public void hideProgress() {
-    progressDialog.dismiss();
+        progressDialog.dismiss();
     }
 
     @Override
@@ -110,6 +97,17 @@ public class NewListActivity extends AppCompatActivity implements EditorView {
                 Toast.LENGTH_SHORT).show();
         // if error, still in this activity
     }
+
+    private void updateUI(FirebaseUser currentUser) {
+
+        if (currentUser == null) {
+            Intent intent = new Intent(NewListActivity.this, LoginActivity.class);
+            startActivity(intent);
+
+        }
+
+    }
+
 }
 
 

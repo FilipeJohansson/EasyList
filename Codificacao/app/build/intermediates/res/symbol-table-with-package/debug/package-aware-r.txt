@@ -1117,7 +1117,6 @@ id center
 id center_horizontal
 id center_vertical
 id chains
-id checkBox
 id checkbox
 id chronometer
 id clip_horizontal
@@ -1175,8 +1174,6 @@ id italic
 id item_touch_helper_previous_elevation
 id labeled
 id largeLabel
-id layoutListas
-id layoutProduto
 id left
 id light
 id line1
@@ -1185,8 +1182,6 @@ id listMode
 id list_item
 id login
 id logout
-id lvListas
-id lvProdutos
 id masked
 id message
 id middle
@@ -1209,11 +1204,11 @@ id parentPanel
 id parent_matrix
 id percent
 id pin
+id productCheckBox
 id progress_circular
 id progress_horizontal
 id radio
 id recycleView
-id recycle_view
 id refreshLayout
 id right
 id right_icon
@@ -1260,7 +1255,6 @@ id start
 id stretch
 id submenuarrow
 id submit_area
-id swipe_refresh
 id tabMode
 id tag_transition_group
 id tag_unhandled_key_event_manager
@@ -1288,8 +1282,7 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id tvListName
-id tvListaNome
-id tvProduto
+id tvProductName
 id tvQuantidade
 id uniform
 id unlabeled
@@ -1354,8 +1347,6 @@ layout activity_main
 layout activity_main_list
 layout activity_new_list
 layout activity_new_product
-layout content_main
-layout content_main_list
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1371,8 +1362,6 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout item_list
-layout layout_listas
-layout layout_produto
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout notification_action
@@ -1381,6 +1370,7 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout product_item_list
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -1474,9 +1464,11 @@ string invalid_username
 string labelNome
 string labelQuantidade
 string listName
+string lista
 string login_com_google
 string login_failed
 string logout
+string medida
 string megadev
 string mtrl_chip_close_icon_content_description
 string password_toggle_content_description
@@ -1484,6 +1476,7 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string product_name
 string project_id
 string prompt_email
 string prompt_password
