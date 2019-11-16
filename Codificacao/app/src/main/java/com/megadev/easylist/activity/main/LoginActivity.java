@@ -1,4 +1,4 @@
-package com.megadev.easylist.activity.editor;
+package com.megadev.easylist.activity.main;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,9 +22,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.megadev.easylist.R;
-import com.megadev.easylist.activity.main.MainActivity;
+import com.megadev.easylist.activity.editor.EditorPresenter;
+import com.megadev.easylist.activity.editor.EditorView;
 
-public class LoginActivity extends AppCompatActivity implements  EditorView {
+public class LoginActivity extends AppCompatActivity implements EditorView {
 
     static final int GOOGLE_SIGN = 779;
     FirebaseAuth mAuth;

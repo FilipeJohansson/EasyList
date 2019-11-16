@@ -26,7 +26,7 @@
         android:testOnly="true"
         android:theme="@style/AppTheme.NoActionBar" >
         <activity
-            android:name="com.megadev.easylist.activity.editor.LoginActivity"
+            android:name="com.megadev.easylist.activity.main.LoginActivity"
             android:label="EasyList"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
@@ -40,10 +40,10 @@
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
-            android:name="com.megadev.easylist.activity.editor.NewProductActivity"
+            android:name="com.megadev.easylist.activity.main.NewProductActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.megadev.easylist.activity.editor.NewListActivity"
+            android:name="com.megadev.easylist.activity.main.NewListActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.megadev.easylist.activity.main.MainListActivity"

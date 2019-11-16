@@ -1,4 +1,4 @@
-package com.megadev.easylist.activity.main;
+package com.megadev.easylist.activity.editor;
 
 import com.megadev.easylist.model.Item;
 

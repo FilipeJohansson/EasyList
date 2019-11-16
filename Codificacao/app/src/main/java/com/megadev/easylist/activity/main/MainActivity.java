@@ -2,7 +2,6 @@ package com.megadev.easylist.activity.main;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,8 +12,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.megadev.easylist.R;
-import com.megadev.easylist.activity.editor.LoginActivity;
-import com.megadev.easylist.activity.editor.NewListActivity;
+import com.megadev.easylist.activity.editor.MainPresenter;
+import com.megadev.easylist.activity.editor.MainView;
 import com.megadev.easylist.model.Lista;
 
 import androidx.appcompat.app.AppCompatActivity;

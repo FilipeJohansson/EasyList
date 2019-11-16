@@ -1,10 +1,9 @@
-package com.megadev.easylist.activity.main;
+package com.megadev.easylist.activity.editor;
 
 import androidx.annotation.NonNull;
 
 import java.util.List;
 
-import com.google.firebase.auth.FirebaseUser;
 import com.megadev.easylist.api.ApiClient;
 import com.megadev.easylist.api.ApiInterface;
 import com.megadev.easylist.model.Item;
@@ -21,7 +20,7 @@ public class MainListPresenter {
         this.view = view;
     }
 
-    void getData(final int ID_LISTA) {
+    public void getData(final int ID_LISTA) {
 
         view.showLoading();
 
@@ -48,7 +47,7 @@ public class MainListPresenter {
 
     }
 
-    void updateItem(final int ID_ITEM, final int STA_CHECK) {
+    public void updateItem(final int ID_ITEM, final int STA_CHECK) {
 
         view.showLoading();
 

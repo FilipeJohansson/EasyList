@@ -1,4 +1,4 @@
-package com.megadev.easylist.activity.editor;
+package com.megadev.easylist.activity.main;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
@@ -6,25 +6,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.megadev.easylist.R;
-import com.megadev.easylist.api.ApiClient;
-import com.megadev.easylist.api.ApiInterface;
-import com.megadev.easylist.model.Lista;
+import com.megadev.easylist.activity.editor.EditorPresenter;
+import com.megadev.easylist.activity.editor.EditorView;
 
 public class NewListActivity extends AppCompatActivity implements EditorView {
 

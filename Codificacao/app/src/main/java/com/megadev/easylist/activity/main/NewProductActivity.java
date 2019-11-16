@@ -1,4 +1,4 @@
-package com.megadev.easylist.activity.editor;
+package com.megadev.easylist.activity.main;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
@@ -17,6 +17,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.megadev.easylist.R;
+import com.megadev.easylist.activity.editor.EditorPresenter;
+import com.megadev.easylist.activity.editor.EditorView;
 
 public class NewProductActivity extends AppCompatActivity implements EditorView {
 
@@ -138,7 +140,7 @@ public class NewProductActivity extends AppCompatActivity implements EditorView 
                 etQuantidade.setError("Valor máximo permitido: 999.9");
             else if (QUANTIDADE < 1)
                 etQuantidade.setError("Quantidade mínima: 1");
-            else {
+            else
                 presenter.saveItem(0,
                         QUANTIDADE,
                         2.3f,
@@ -147,8 +149,6 @@ public class NewProductActivity extends AppCompatActivity implements EditorView 
                         DESCRICAO,
                         MEDIDA,
                         user);
-
-            }
 
         });
     }

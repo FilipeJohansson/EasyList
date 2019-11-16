@@ -46,8 +46,8 @@
 26-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:13:9-52
 27        <activity
 27-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:14:9-22:20
-28            android:name="com.megadev.easylist.activity.editor.LoginActivity"
-28-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:14:19-64
+28            android:name="com.megadev.easylist.activity.main.LoginActivity"
+28-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:14:19-62
 29            android:label="EasyList"
 29-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:15:13-37
 30            android:theme="@style/AppTheme.NoActionBar" >
@@ -72,14 +72,14 @@
 40        </activity>
 41        <activity
 41-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:27:9-29:59
-42            android:name="com.megadev.easylist.activity.editor.NewProductActivity"
-42-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:28:13-63
+42            android:name="com.megadev.easylist.activity.main.NewProductActivity"
+42-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:28:13-61
 43            android:theme="@style/AppTheme.NoActionBar" />
 43-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:29:13-56
 44        <activity
 44-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:30:9-32:59
-45            android:name="com.megadev.easylist.activity.editor.NewListActivity"
-45-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:31:13-60
+45            android:name="com.megadev.easylist.activity.main.NewListActivity"
+45-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:31:13-58
 46            android:theme="@style/AppTheme.NoActionBar" />
 46-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:32:13-56
 47        <activity

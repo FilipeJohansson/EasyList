@@ -1,4 +1,4 @@
-package com.megadev.easylist.activity.main;
+package com.megadev.easylist.activity.editor;
 
 import androidx.annotation.NonNull;
 
@@ -20,7 +20,7 @@ public class MainPresenter {
         this.view = view;
     }
 
-    void getData(String UID) {
+    public void getData(String UID) {
 
         view.showLoading();
 

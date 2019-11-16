@@ -21,7 +21,7 @@ public class EditorPresenter {
         this.view = view;
     }
 
-    void saveUser(final String UID_USUARIO, final FirebaseUser user) {
+    public void saveUser(final String UID_USUARIO, final FirebaseUser user) {
         view.showProgress();
 
         ApiInterface apiInterface = ApiClient.getApiClient()
@@ -58,7 +58,7 @@ public class EditorPresenter {
 
     }
 
-    void saveList(final String NME_LISTA, final FirebaseUser user) {
+    public void saveList(final String NME_LISTA, final FirebaseUser user) {
         view.showProgress();
 
         String UID_USUARIO = user.getUid();
@@ -98,7 +98,7 @@ public class EditorPresenter {
 
     }
 
-    void saveItem(final int STA_CHECK,
+    public void saveItem(final int STA_CHECK,
                   final float QUANTIDADE,
                   final float VLR_UNITARIO,
                   final int ID_LISTA,

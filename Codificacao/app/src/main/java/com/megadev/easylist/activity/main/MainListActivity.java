@@ -13,10 +13,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.megadev.easylist.R;
-import com.megadev.easylist.activity.editor.EditorPresenter;
-import com.megadev.easylist.activity.editor.EditorView;
-import com.megadev.easylist.activity.editor.LoginActivity;
-import com.megadev.easylist.activity.editor.NewProductActivity;
+import com.megadev.easylist.activity.editor.MainListPresenter;
+import com.megadev.easylist.activity.editor.MainListView;
 import com.megadev.easylist.model.Item;
 
 import androidx.appcompat.app.AppCompatActivity;
