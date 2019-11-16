@@ -2,6 +2,7 @@ package com.megadev.easylist.activity.main;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +17,7 @@ import com.megadev.easylist.activity.editor.MainPresenter;
 import com.megadev.easylist.activity.editor.MainView;
 import com.megadev.easylist.model.Lista;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -58,7 +60,23 @@ public class MainActivity extends AppCompatActivity implements MainView {
         toolbar = findViewById(R.id.toolbar_title);
         refreshLayout = findViewById(R.id.refreshLayout);
         recyclerView = findViewById(R.id.recycleView);
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                if (dy > 0) {
+                    if (fab.isShown()) {
+                        fab.hide();
+                    }
+                }
+                else if (dy < 0) {
+                    if (!fab.isShown()) {
+                        fab.show();
+                    }
+                }
+            }
+        });
 
+        refreshLayout.setColorSchemeResources(R.color.colorPrimaryDark);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         fab = findViewById(R.id.fab);
@@ -96,6 +114,8 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
+
+        fab.show();
 
         String UID_USUARIO = mAuth.getUid().trim();
         presenter = new MainPresenter(this);

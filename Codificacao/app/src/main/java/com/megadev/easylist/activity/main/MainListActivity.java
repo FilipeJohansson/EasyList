@@ -1,8 +1,12 @@
 package com.megadev.easylist.activity.main;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,22 +21,26 @@ import com.megadev.easylist.activity.editor.MainListPresenter;
 import com.megadev.easylist.activity.editor.MainListView;
 import com.megadev.easylist.model.Item;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.MotionEventCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import java.util.List;
+import java.util.Objects;
 
 public class MainListActivity extends AppCompatActivity implements MainListView {
 
+    private static final String DEBUG_TAG = "TAGG";
     private FirebaseAuth mAuth;
-    private GoogleSignInClient mGoogleSignInClient;
 
     private FloatingActionButton fab;
     private RecyclerView recyclerView;
     private SwipeRefreshLayout refreshLayout;
-    private TextView toolbar_list_title;
+
+    boolean fabIsHide = false;
 
     MainListPresenter presenter;
     MainListAdapter adapter;
@@ -46,24 +54,33 @@ public class MainListActivity extends AppCompatActivity implements MainListView 
         setContentView(R.layout.activity_main_list);
 
         mAuth = FirebaseAuth.getInstance();
-        GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions
-                .Builder()
-                .requestIdToken(getString(R.string.default_web_client_id))
-                .requestEmail()
-                .build();
 
-        mGoogleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions);
-
-        int sessionID = getIntent().getExtras().getInt("EXTRA_SESSION_ID");
+        int sessionID = Objects.requireNonNull(getIntent().getExtras()).getInt("EXTRA_SESSION_ID");
         String nmeLista = getIntent().getExtras().getString("EXTRA_LIST_NAME");
 
-        toolbar_list_title = findViewById(R.id.toolbar_list_title);
+        TextView toolbar_list_title = findViewById(R.id.toolbar_list_title);
         refreshLayout = findViewById(R.id.refreshLayout);
         recyclerView = findViewById(R.id.recycleView);
 
         toolbar_list_title.setText(nmeLista);
 
+        refreshLayout.setColorSchemeResources(R.color.colorPrimaryDark);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                if (dy > 0) {
+                    if (fab.isShown()) {
+                        fab.hide();
+                    }
+                }
+                else if (dy < 0) {
+                    if (!fab.isShown()) {
+                        fab.show();
+                    }
+                }
+            }
+        });
 
         fab = findViewById(R.id.fab);
         fab.setOnClickListener(view -> {
@@ -98,7 +115,9 @@ public class MainListActivity extends AppCompatActivity implements MainListView 
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
 
-        int sessionID = getIntent().getExtras().getInt("EXTRA_SESSION_ID");
+        fab.show();
+
+        int sessionID = Objects.requireNonNull(getIntent().getExtras()).getInt("EXTRA_SESSION_ID");
 
         refreshPage(sessionID);
 
@@ -158,5 +177,6 @@ public class MainListActivity extends AppCompatActivity implements MainListView 
         );
 
     }
+
 
 }
