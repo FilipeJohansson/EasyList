@@ -19,6 +19,14 @@
         android:hint="@string/hintProduto"
         android:importantForAutofill="no"
         android:inputType="textPersonName" />
+    <TextView
+        android:id="@+id/tvCountNameProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etProduto"
+        android:layout_alignEnd="@id/etProduto"
+        android:layout_marginTop="-10dp"
+        android:text="@string/_0_30" />
 
     <EditText
         android:id="@+id/etDescricao"
@@ -33,6 +41,14 @@
         android:hint="@string/hintDescricao"
         android:importantForAutofill="no"
         android:inputType="textLongMessage" />
+    <TextView
+        android:id="@+id/tvCountDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etDescricao"
+        android:layout_alignEnd="@id/etDescricao"
+        android:layout_marginTop="-10dp"
+        android:text="@string/_0_30" />
 
     <EditText
         android:id="@+id/etQuantidade"
@@ -47,6 +63,14 @@
         android:hint="@string/hintQuantidade"
         android:importantForAutofill="no"
         android:inputType="numberDecimal"/>
+    <TextView
+        android:id="@+id/tvCountQnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etQuantidade"
+        android:layout_alignEnd="@id/etQuantidade"
+        android:layout_marginTop="-10dp"
+        android:text="@string/_0_30" />
 
     <TextView
         android:id="@+id/tvSpinner"

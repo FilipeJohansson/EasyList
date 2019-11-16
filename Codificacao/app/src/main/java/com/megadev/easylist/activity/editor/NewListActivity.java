@@ -1,11 +1,15 @@
 package com.megadev.easylist.activity.editor;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import retrofit2.Call;
@@ -27,6 +31,7 @@ public class NewListActivity extends AppCompatActivity implements EditorView {
     private FirebaseAuth mAuth;
 
     private EditText etNomeLista;
+    private TextView tvCountNameList;
     private Button btnSalvar;
 
     ProgressDialog progressDialog;
@@ -44,7 +49,26 @@ public class NewListActivity extends AppCompatActivity implements EditorView {
         mAuth = FirebaseAuth.getInstance();
 
         etNomeLista = (EditText) findViewById(R.id.etNomeLista);
+        tvCountNameList = (TextView) findViewById(R.id.tvCountNameList);
         btnSalvar = (Button) findViewById(R.id.btnSalvar);
+
+        etNomeLista.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                tvCountNameList.setText(charSequence.length() + "/20");
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Criando Lista");
@@ -53,14 +77,15 @@ public class NewListActivity extends AppCompatActivity implements EditorView {
             String NME_LISTA = etNomeLista.getText().toString();
             FirebaseUser user = mAuth.getCurrentUser();
 
-            if (NME_LISTA.isEmpty()) {
+            if (NME_LISTA.isEmpty())
                 etNomeLista.setError("Por favor, digite um nome para a lista");
-
-            } else {
+            else if (NME_LISTA.length() > 20)
+                etNomeLista.setError("Número máximo de caracteres excecido");
+            else
                 presenter.saveList(NME_LISTA, user);
 
-            }
         });
+
     }
 
     @Override

@@ -1,11 +1,15 @@
 package com.megadev.easylist.activity.editor;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +23,7 @@ public class NewProductActivity extends AppCompatActivity implements EditorView 
     private FirebaseAuth mAuth;
 
     private EditText etQuantidade, etProduto, etDescricao;
+    private TextView tvCountNameProduct, tvCountDesc, tvCountQnt;
     private Spinner spnMedida;
     private Button btnSalvar;
 
@@ -26,6 +31,7 @@ public class NewProductActivity extends AppCompatActivity implements EditorView 
 
     EditorPresenter presenter;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,9 +45,68 @@ public class NewProductActivity extends AppCompatActivity implements EditorView 
         etProduto = (EditText) findViewById(R.id.etProduto);
         etQuantidade = (EditText) findViewById(R.id.etQuantidade);
         etDescricao = (EditText) findViewById(R.id.etDescricao);
+        tvCountNameProduct = (TextView) findViewById(R.id.tvCountNameProduct);
+        tvCountDesc = (TextView) findViewById(R.id.tvCountDesc);
+        tvCountQnt = (TextView) findViewById(R.id.tvCountQnt);
         spnMedida = (Spinner) findViewById(R.id.spnMedida);
 
         btnSalvar = (Button) findViewById(R.id.btnSalvarProduto);
+
+        tvCountNameProduct.setText("0/20");
+        tvCountDesc.setText("0/30");
+        tvCountQnt.setText("0/5");
+
+        etProduto.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                tvCountNameProduct.setText(charSequence.length() + "/20");
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+        etDescricao.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                tvCountDesc.setText(charSequence.length() + "/30");
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+        etQuantidade.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                tvCountQnt.setText(charSequence.length() + "/5");
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Adicionando Produto");
@@ -49,14 +114,30 @@ public class NewProductActivity extends AppCompatActivity implements EditorView 
         btnSalvar.setOnClickListener(view -> {
             String NME_PRODUTO = etProduto.getText().toString();
             String DESCRICAO = etDescricao.getText().toString();
-            int QUANTIDADE = Integer.parseInt(etQuantidade.getText().toString());
+            String QNT = etQuantidade.getText().toString();
             String MEDIDA = spnMedida.getSelectedItem().toString();
             FirebaseUser user = mAuth.getCurrentUser();
 
+            float QUANTIDADE = 1;
+
+            if (!QNT.isEmpty()) {
+                QUANTIDADE = Float.parseFloat(QNT);
+            }
+
             if (NME_PRODUTO.isEmpty())
                 etProduto.setError("Por favor, digite um produto");
-            else if (etQuantidade.getText().toString().isEmpty())
+            else if (NME_PRODUTO.length() > 20)
+                etProduto.setError("Limite de caracteres excedito");
+            else if (DESCRICAO.length() > 30)
+                etDescricao.setError("Limite de caracteres excedido");
+            else if (QNT.isEmpty())
                 etQuantidade.setError("Por favor, coloque uma quantidade");
+            else if (QNT.length() > 5)
+                etQuantidade.setError("Limite de caracteres excedido");
+            else if (QUANTIDADE > 999.9f)
+                etQuantidade.setError("Valor máximo permitido: 999.9");
+            else if (QUANTIDADE < 1)
+                etQuantidade.setError("Quantidade mínima: 1");
             else {
                 presenter.saveItem(0,
                         QUANTIDADE,

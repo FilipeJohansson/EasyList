@@ -43,6 +43,8 @@
     <string name="lista">Lista</string>
     <string name="unidade_de_medida">Unidade de medida:</string>
     <string name="hintDescricao">Descrição</string>
+    <string name="_30_30">30/30</string>
+    <string name="_0_30">0/30</string>
 
     <string-array name="units_arrays">
         <item>Un</item>
