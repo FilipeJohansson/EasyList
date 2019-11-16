@@ -11,4 +11,6 @@ public interface MainView {
     void onGetResult(List<Lista> listas);
     void onErrorLoading(String message);
 
+    void onAddSuccess(String message);
+
 }

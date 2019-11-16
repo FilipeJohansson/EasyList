@@ -20,17 +20,17 @@
 
     if ($query) {
       $response['success'] = true;
-      $response['message'] = "Successfully";
+      $response['message'] = "Lista adicionada";
 
     } else {
       $response['success'] = false;
-      $response['message'] = "Failure";
+      $response['message'] = "Erro ao adicionar lista";
 
     }
 
   } else {
     $response['success'] = false;
-    $response['message'] = "Error";
+    $response['message'] = "Erro na solicitação";
 
   }
 

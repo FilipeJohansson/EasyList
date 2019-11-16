@@ -31,15 +31,42 @@ public class MainPresenter {
             @Override
             public void onResponse(@NonNull Call<List<Lista>> call, @NonNull Response<List<Lista>> response) {
                 view.hideLoading();
-                if (response.isSuccessful() && response.body() != null) {
+                if (response.isSuccessful() && response.body() != null)
                     view.onGetResult(response.body());
-
-                }
-
             }
 
             @Override
             public void onFailure(@NonNull Call<List<Lista>> call, @NonNull Throwable t) {
+                view.hideLoading();
+                view.onErrorLoading(t.getLocalizedMessage());
+            }
+        });
+
+    }
+
+    public void deleteLista(final int ID_LISTA) {
+
+        view.showLoading();
+
+        ApiInterface apiInterface = ApiClient.getApiClient()
+                .create(ApiInterface.class);
+        Call<Lista> call = apiInterface.deleteLista(ID_LISTA);
+        call.enqueue(new Callback<Lista>() {
+            @Override
+            public void onResponse(@NonNull Call<Lista> call, @NonNull Response<Lista> response) {
+                view.hideLoading();
+                if (response.isSuccessful() && response.body() != null) {
+                    Boolean success = response.body().getSuccess();
+
+                    if (success)
+                        view.onAddSuccess(response.body().getMessage());
+                    else
+                        view.onErrorLoading(response.body().getMessage());
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<Lista> call, @NonNull Throwable t) {
                 view.hideLoading();
                 view.onErrorLoading(t.getLocalizedMessage());
             }

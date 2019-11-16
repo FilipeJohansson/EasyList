@@ -41,17 +41,17 @@
 
     if ($query) {
       $response['success'] = true;
-      $response['message'] = "Successfully";
+      $response['message'] = "Item adicionado";
 
     } else {
       $response['success'] = false;
-      $response['message'] = "Failure";
+      $response['message'] = "Erro ao adicionar item";
 
     }
 
   } else {
     $response['success'] = false;
-    $response['message'] = "Error";
+    $response['message'] = "Erro na solicitação";
 
   }
 

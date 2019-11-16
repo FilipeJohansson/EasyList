@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,8 +40,7 @@ public class MainListActivity extends AppCompatActivity implements MainListView 
     private FloatingActionButton fab;
     private RecyclerView recyclerView;
     private SwipeRefreshLayout refreshLayout;
-
-    boolean fabIsHide = false;
+    private ImageView backList;
 
     MainListPresenter presenter;
     MainListAdapter adapter;
@@ -82,6 +82,12 @@ public class MainListActivity extends AppCompatActivity implements MainListView 
             }
         });
 
+        backList = findViewById(R.id.backList);
+        backList.setOnClickListener(view -> {
+            Intent intent = new Intent(MainListActivity.this, MainActivity.class);
+            startActivity(intent);
+        });
+
         fab = findViewById(R.id.fab);
         fab.setOnClickListener(view -> {
             Intent intent = new Intent(MainListActivity.this, NewProductActivity.class);
@@ -101,7 +107,7 @@ public class MainListActivity extends AppCompatActivity implements MainListView 
             presenter.updateItem(ID_ITEM, STA_CHECK);
 
             Handler handler = new Handler();
-            handler.postDelayed(() -> refreshPage(sessionID), 100);
+            handler.postDelayed(() -> refreshPage(sessionID), 300);
 
         });
 

@@ -13,17 +13,17 @@
 
     if ($query) {
       $response['success'] = true;
-      $response['message'] = "Successfully";
+      $response['message'] = "Item atualizado";
 
     } else {
       $response['success'] = false;
-      $response['message'] = "Failure";
+      $response['message'] = "Erro ao atualizar item";
 
     }
 
   } else {
     $response['success'] = false;
-    $response['message'] = "Error";
+    $response['message'] = "Erro na solicitação";
 
   }
 

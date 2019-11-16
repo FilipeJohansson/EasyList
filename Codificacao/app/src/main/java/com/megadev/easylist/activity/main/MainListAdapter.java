@@ -54,14 +54,9 @@ public class MainListAdapter extends RecyclerView.Adapter<MainListAdapter.Recycl
         } else
             isChecked = false;
 
-        if (item.getDSC_PRODUTO() == null) {
+        if (item.getDSC_PRODUTO() == null)
             holder.card_item_list_relative.removeView(holder.tvDescricao);
-
-            ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) holder.vLinha.getLayoutParams();
-            layoutParams.setMargins(0, 85, 0, 0);
-
-            holder.vLinha.setLayoutParams(layoutParams);
-        } else
+        else
             holder.tvDescricao.setText(item.getDSC_PRODUTO());
 
         holder.productCheckBox.setChecked(isChecked);
@@ -84,7 +79,6 @@ public class MainListAdapter extends RecyclerView.Adapter<MainListAdapter.Recycl
         CardView card_item_list;
         RelativeLayout card_item_list_relative;
         ItemClickListener itemClickListener;
-        View vLinha;
 
         RecyclerViewAdapter(View itemView, ItemClickListener itemClickListener) {
             super(itemView);
@@ -96,7 +90,6 @@ public class MainListAdapter extends RecyclerView.Adapter<MainListAdapter.Recycl
             spinner = itemView.findViewById(R.id.spnMedida);
             card_item_list = itemView.findViewById(R.id.card_item_list);
             card_item_list_relative = itemView.findViewById(R.id.card_item_list_relative);
-            vLinha = itemView.findViewById(R.id.vLinha);
 
             this.itemClickListener = itemClickListener;
             card_item_list.setOnClickListener(this);

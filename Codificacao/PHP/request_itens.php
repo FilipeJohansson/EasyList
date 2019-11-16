@@ -11,7 +11,8 @@
     QUANTIDADE, NME_PRODUTO,
     DSC_PRODUTO, UN_MEDIDA
     FROM `item`
-    WHERE `ID_LISTA` = '$ID_LISTA';");
+    WHERE `ID_LISTA` = '$ID_LISTA'
+    ORDER BY STA_CHECK ASC;");
   $query->execute();
 
   $response = array();

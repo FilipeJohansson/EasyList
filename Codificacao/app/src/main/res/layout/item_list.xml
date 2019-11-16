@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginLeft="10dp"
-    android:layout_marginTop="1dp"
+    android:layout_marginTop="3dp"
     android:layout_marginRight="10dp"
-    android:layout_marginBottom="1dp"
+    android:layout_marginBottom="3dp"
     android:clickable="true"
     android:focusable="true"
     app:cardBackgroundColor="#FFFFFF"
@@ -16,7 +16,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@drawable/itenslist">
 
         <TextView
             android:id="@+id/tvListName"
@@ -27,13 +28,6 @@
             android:text="@string/listName"
             android:textColor="#47525E"
             android:textSize="18sp" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="65sp"
-            android:background="@color/colorBasic" />
 
         <ImageView
             android:id="@+id/imageView"

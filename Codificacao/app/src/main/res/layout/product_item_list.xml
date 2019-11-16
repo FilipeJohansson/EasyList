@@ -17,9 +17,11 @@
         android:id="@+id/card_item_list_relative"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
         android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp" >
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/itenslist"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp">
 
         <CheckBox
             android:id="@+id/productCheckBox"
@@ -70,13 +72,5 @@
             tools:ignore="RelativeOverlap" />
 
     </RelativeLayout>
-
-    <View
-        android:id="@+id/vLinha"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="57sp"
-        android:background="@color/colorBasic" />
 
 </androidx.cardview.widget.CardView>

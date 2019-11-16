@@ -1,8 +1,13 @@
 package com.megadev.easylist.activity.main;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -10,6 +15,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.megadev.easylist.R;
@@ -18,7 +24,9 @@ import com.megadev.easylist.activity.editor.MainView;
 import com.megadev.easylist.model.Lista;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -34,6 +42,8 @@ public class MainActivity extends AppCompatActivity implements MainView {
     private FloatingActionButton fab;
     private RecyclerView recyclerView;
     private SwipeRefreshLayout refreshLayout;
+
+    private String UID_USUARIO;
 
     MainPresenter presenter;
     MainAdapter adapter;
@@ -60,6 +70,17 @@ public class MainActivity extends AppCompatActivity implements MainView {
         toolbar = findViewById(R.id.toolbar_title);
         refreshLayout = findViewById(R.id.refreshLayout);
         recyclerView = findViewById(R.id.recycleView);
+
+        refreshLayout.setColorSchemeResources(R.color.colorPrimaryDark);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        presenter = new MainPresenter(this);
+        presenter.getData(UID_USUARIO);
+
+        refreshLayout.setOnRefreshListener(
+                () -> presenter.getData(UID_USUARIO)
+        );
+
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
@@ -76,33 +97,42 @@ public class MainActivity extends AppCompatActivity implements MainView {
             }
         });
 
-        refreshLayout.setColorSchemeResources(R.color.colorPrimaryDark);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
         fab = findViewById(R.id.fab);
         fab.setOnClickListener(view -> {
             Intent i = new Intent(MainActivity.this, NewListActivity.class);
             startActivity(i);
         });
 
-        presenter = new MainPresenter(this);
-        presenter.getData(UID_USUARIO);
+        Intent intent = new Intent(this, MainListActivity.class);
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this, R.style.MyDialogTheme);
 
-        refreshLayout.setOnRefreshListener(
-                () -> presenter.getData(UID_USUARIO)
-        );
+        itemClickListener = new MainAdapter.ItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                int sessionId = lista.get(position).getID_LISTA();
+                String nmeLista = lista.get(position).getNME_LISTA();
 
-        itemClickListener = ((view, position) -> {
-            Intent intent = new Intent(this, MainListActivity.class);
+                intent.putExtra("EXTRA_SESSION_ID", sessionId);
+                intent.putExtra("EXTRA_LIST_NAME", nmeLista);
+                startActivity(intent);
+            }
 
-            int sessionId = lista.get(position).getID_LISTA();
-            String nmeLista = lista.get(position).getNME_LISTA();
+            @Override
+            public void onLongItemClick(View view, int position) {
+                alertDialog.setTitle("Deletar lista");
+                alertDialog.setMessage("Você deseja deletar '" + lista.get(position).getNME_LISTA() + "'?");
+                alertDialog.setPositiveButton("Sim", (dialogInterface, i) -> {
+                    dialogInterface.dismiss();
+                    presenter.deleteLista(lista.get(position).getID_LISTA());
 
-            intent.putExtra("EXTRA_SESSION_ID", sessionId);
-            intent.putExtra("EXTRA_LIST_NAME", nmeLista);
-            startActivity(intent);
-
-        });
+                    Handler handler = new Handler();
+                    handler.postDelayed(() -> refreshPage(UID_USUARIO), 300);
+                });
+                alertDialog.setNegativeButton("Não",
+                        (dialogInterface, i) -> dialogInterface.dismiss());
+                alertDialog.show();
+            }
+        };
 
         toolbar.setOnClickListener(view -> Logout());
 
@@ -112,18 +142,13 @@ public class MainActivity extends AppCompatActivity implements MainView {
     protected void onStart() {
         super.onStart();
 
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        updateUI(currentUser);
+        updateUI(mAuth.getCurrentUser());
 
         fab.show();
 
-        String UID_USUARIO = mAuth.getUid().trim();
-        presenter = new MainPresenter(this);
-        presenter.getData(UID_USUARIO);
+        UID_USUARIO = mAuth.getUid().trim();
 
-        refreshLayout.setOnRefreshListener(
-                () -> presenter.getData(UID_USUARIO)
-        );
+        refreshPage(UID_USUARIO);
 
     }
 
@@ -159,6 +184,22 @@ public class MainActivity extends AppCompatActivity implements MainView {
     @Override
     public void onErrorLoading(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onAddSuccess(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    private void refreshPage(String UID_USUARIO) {
+
+        presenter = new MainPresenter(this);
+        presenter.getData(UID_USUARIO);
+
+        refreshLayout.setOnRefreshListener(
+                () -> presenter.getData(UID_USUARIO)
+        );
+
     }
 
     void Logout() {

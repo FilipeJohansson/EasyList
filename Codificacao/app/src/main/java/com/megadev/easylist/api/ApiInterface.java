@@ -58,4 +58,10 @@ public interface ApiInterface {
             @Query("ID_LISTA") int ID_LISTA
     );
 
+    @FormUrlEncoded
+    @POST("delete_list.php")
+    Call<Lista> deleteLista(
+            @Field("ID_LISTA") int ID_LISTA
+    );
+
 }

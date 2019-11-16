@@ -145,4 +145,41 @@ public class EditorPresenter {
 
     }
 
+    public void deleteLista(final int ID_LISTA, final FirebaseUser user) {
+        view.showProgress();
+
+        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        Call<Lista> call = apiInterface.deleteLista(ID_LISTA);
+
+        call.enqueue(new Callback<Lista>() {
+            @Override
+            public void onResponse(@NonNull Call<Lista> call, @NonNull Response<Lista> response) {
+                view.hideProgress();
+
+                if (response.isSuccessful() && response.body() != null) {
+                    Boolean success = response.body().getSuccess();
+
+                    if (success) {
+                        view.onAddSuccess(response.body().getMessage(), user);
+
+                    } else {
+                        view.onAddError(response.body().getMessage(), user);
+
+
+                    }
+
+                }
+
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<Lista> call, @NonNull Throwable t) {
+                view.hideProgress();
+
+                view.onAddError(t.getLocalizedMessage(), user);
+
+            }
+        });
+    }
+
 }

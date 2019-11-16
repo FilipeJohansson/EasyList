@@ -46,7 +46,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.RecyclerViewAd
         return listas.size();
     }
 
-    class RecyclerViewAdapter extends RecyclerView.ViewHolder implements View.OnClickListener {
+    class RecyclerViewAdapter extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
 
         TextView tvListName;
         CardView card_item_list;
@@ -60,6 +60,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.RecyclerViewAd
 
             this.itemClickListener = itemClickListener;
             card_item_list.setOnClickListener(this);
+            card_item_list.setOnLongClickListener(this);
         }
 
         @Override
@@ -67,11 +68,17 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.RecyclerViewAd
             itemClickListener.onItemClick(view, getAdapterPosition());
 
         }
+
+        @Override
+        public boolean onLongClick(View view) {
+            itemClickListener.onLongItemClick(view, getAdapterPosition());
+            return true;
+        }
     }
 
     public interface ItemClickListener {
         void onItemClick(View view, int position);
-
+        void onLongItemClick(View view, int position);
     }
 
 }
