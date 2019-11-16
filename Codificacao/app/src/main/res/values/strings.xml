@@ -41,6 +41,15 @@
     <string name="product_name">Carne</string>
     <string name="medida">2Kg</string>
     <string name="lista">Lista</string>
+    <string name="unidade_de_medida">Unidade de medida:</string>
+    <string name="hintDescricao">Descrição</string>
+
+    <string-array name="units_arrays">
+        <item>Un</item>
+        <item>L</item>
+        <item>Kg</item>
+        <item>g</item>
+    </string-array>
 
 
 </resources>

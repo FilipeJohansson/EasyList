@@ -13,14 +13,29 @@
 
     require_once("connect.php");
 
-    $query = $pdo->prepare("INSERT INTO `item` (
-      STA_CHECK, QUANTIDADE, VLR_UNITARIO,
-      VLR_TOTAL, ID_LISTA, NME_PRODUTO,
-      DSC_PRODUTO, UN_MEDIDA
-    ) VALUES (
-      '$STA_CHECK', '$QUANTIDADE', '$VLR_UNITARIO',
-      '$VLR_TOTAL', '$ID_LISTA', '$NME_PRODUTO',
-      '$DSC_PRODUTO', '$UN_MEDIDA');");
+    if($DSC_PRODUTO == "") {
+
+      $query = $pdo->prepare("INSERT INTO `item` (
+        STA_CHECK, QUANTIDADE, VLR_UNITARIO,
+        VLR_TOTAL, ID_LISTA, NME_PRODUTO,
+        UN_MEDIDA
+      ) VALUES (
+        '$STA_CHECK', '$QUANTIDADE', '$VLR_UNITARIO',
+        '$VLR_TOTAL', '$ID_LISTA', '$NME_PRODUTO',
+        '$UN_MEDIDA');");
+
+    } else {
+
+        $query = $pdo->prepare("INSERT INTO `item` (
+          STA_CHECK, QUANTIDADE, VLR_UNITARIO,
+          VLR_TOTAL, ID_LISTA, NME_PRODUTO,
+          DSC_PRODUTO, UN_MEDIDA
+        ) VALUES (
+          '$STA_CHECK', '$QUANTIDADE', '$VLR_UNITARIO',
+          '$VLR_TOTAL', '$ID_LISTA', '$NME_PRODUTO',
+          '$DSC_PRODUTO', '$UN_MEDIDA');");
+
+    }
 
     $query->execute();
 

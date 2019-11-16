@@ -6,13 +6,13 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="23"
-8-->C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml
+8-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="28" />
-9-->C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml
+9-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:5:5-67
-11-->C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:5:22-64
+11-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:5:5-67
+11-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:5:22-64
 12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 12-->[com.google.android.gms:play-services-measurement-api:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\1b5522440688f179aa93f432df8ae807\play-services-measurement-api-17.0.0\AndroidManifest.xml:23:5-79
 12-->[com.google.android.gms:play-services-measurement-api:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\1b5522440688f179aa93f432df8ae807\play-services-measurement-api-17.0.0\AndroidManifest.xml:23:22-76
@@ -27,67 +27,67 @@
 15-->[com.google.android.gms:play-services-measurement:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\2babcf0c267ec59214cfddc5d20ee8d0\play-services-measurement-17.0.0\AndroidManifest.xml:26:22-107
 16
 17    <application
-17-->C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:7:5-36:19
+17-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:7:5-36:19
 18        android:allowBackup="true"
-18-->C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:8:9-35
+18-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:8:9-35
 19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 19-->[androidx.core:core:1.0.1] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\d856a2ad07d784cae061be131eb0ba9a\core-1.0.1\AndroidManifest.xml:22:18-86
 20        android:debuggable="true"
 21        android:icon="@mipmap/ic_launcher"
-21-->C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:9:9-43
+21-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:9:9-43
 22        android:label="@string/app_name"
-22-->C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:10:9-41
+22-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:10:9-41
 23        android:roundIcon="@mipmap/ic_launcher_round"
-23-->C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:11:9-54
+23-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:11:9-54
 24        android:supportsRtl="true"
-24-->C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:12:9-35
+24-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:12:9-35
 25        android:testOnly="true"
 26        android:theme="@style/AppTheme.NoActionBar" >
-26-->C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:13:9-52
+26-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:13:9-52
 27        <activity
-27-->C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:14:9-22:20
+27-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:14:9-22:20
 28            android:name="com.megadev.easylist.activity.editor.LoginActivity"
-28-->C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:14:19-64
+28-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:14:19-64
 29            android:label="EasyList"
-29-->C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:15:13-37
+29-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:15:13-37
 30            android:theme="@style/AppTheme.NoActionBar" >
-30-->C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:16:13-56
+30-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:16:13-56
 31            <intent-filter>
-31-->C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:17:13-21:29
+31-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:17:13-21:29
 32                <action android:name="android.intent.action.MAIN" />
-32-->C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:18:17-69
-32-->C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:18:25-66
+32-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:18:17-69
+32-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:18:25-66
 33
 34                <category android:name="android.intent.category.LAUNCHER" />
-34-->C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:20:17-77
-34-->C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:20:27-74
+34-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:20:17-77
+34-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:20:27-74
 35            </intent-filter>
 36        </activity>
 37        <activity
-37-->C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:23:9-26:20
+37-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:23:9-26:20
 38            android:name="com.megadev.easylist.activity.main.MainActivity"
-38-->C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:24:13-55
+38-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:24:13-55
 39            android:theme="@style/AppTheme.NoActionBar" >
-39-->C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:25:13-56
+39-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:25:13-56
 40        </activity>
 41        <activity
-41-->C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:27:9-29:59
+41-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:27:9-29:59
 42            android:name="com.megadev.easylist.activity.editor.NewProductActivity"
-42-->C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:28:13-63
+42-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:28:13-63
 43            android:theme="@style/AppTheme.NoActionBar" />
-43-->C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:29:13-56
+43-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:29:13-56
 44        <activity
-44-->C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:30:9-32:59
+44-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:30:9-32:59
 45            android:name="com.megadev.easylist.activity.editor.NewListActivity"
-45-->C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:31:13-60
+45-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:31:13-60
 46            android:theme="@style/AppTheme.NoActionBar" />
-46-->C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:32:13-56
+46-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:32:13-56
 47        <activity
-47-->C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:33:9-35:59
+47-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:33:9-35:59
 48            android:name="com.megadev.easylist.activity.main.MainListActivity"
-48-->C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:34:13-59
+48-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:34:13-59
 49            android:theme="@style/AppTheme.NoActionBar" />
-49-->C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:35:13-56
+49-->C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:35:13-56
 50        <activity
 50-->[com.google.firebase:firebase-auth:19.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\c863307d37dfc8f7c794c3c934b2cdaa\firebase-auth-19.0.0\AndroidManifest.xml:24:9-31:50
 51            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
@@ -235,11 +235,11 @@
 129-->[com.google.android.gms:play-services-measurement:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\2babcf0c267ec59214cfddc5d20ee8d0\play-services-measurement-17.0.0\AndroidManifest.xml:52:13-69
 130
 131        <meta-data
-131-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\5c24ce031169b006e8387c593e7538ed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+131-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\27c2f9067560f9efbec7dcc5dfb056a1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
 132            android:name="com.google.android.gms.version"
-132-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\5c24ce031169b006e8387c593e7538ed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+132-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\27c2f9067560f9efbec7dcc5dfb056a1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
 133            android:value="@integer/google_play_services_version" />
-133-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\5c24ce031169b006e8387c593e7538ed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+133-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\27c2f9067560f9efbec7dcc5dfb056a1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
 134
 135        <provider
 135-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\020ca84081f1b5abc9c268e6cb8b944f\lifecycle-process-2.0.0\AndroidManifest.xml:23:9-27:43

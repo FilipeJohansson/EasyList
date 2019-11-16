@@ -7,9 +7,9 @@
   $ID_LISTA = $_GET['ID_LISTA'];
 
   $query = $pdo->prepare("SELECT
-    ID_ITEM, NME_PRODUTO,
-    QUANTIDADE, STA_CHECK,
-    UN_MEDIDA
+    ID_ITEM, STA_CHECK,
+    QUANTIDADE, NME_PRODUTO,
+    DSC_PRODUTO, UN_MEDIDA
     FROM `item`
     WHERE `ID_LISTA` = '$ID_LISTA';");
   $query->execute();
@@ -21,10 +21,11 @@
     array_push($response,
     array(
       'ID_ITEM' =>$row['ID_ITEM'],
-      'NME_PRODUTO' =>$row['NME_PRODUTO'],
-      'QUANTIDADE' =>$row['QUANTIDADE'],
       'STA_CHECK' =>$row['STA_CHECK'],
-      'UN_MEDIDA' =>$row['UN_MEDIDA'],
+      'QUANTIDADE' =>$row['QUANTIDADE'],
+      'NME_PRODUTO' =>$row['NME_PRODUTO'],
+      'DSC_PRODUTO' =>$row['DSC_PRODUTO'],
+      'UN_MEDIDA' =>$row['UN_MEDIDA']
     )
     );
 

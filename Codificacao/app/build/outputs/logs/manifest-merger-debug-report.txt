@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:2:1-38:12
-INJECTED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:2:1-38:12
-INJECTED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:2:1-38:12
-INJECTED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:2:1-38:12
+ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:2:1-38:12
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\3df2fd68af0236fb7b1a24eeed8b503b\material-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.0.2] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\4b1d54629fa0914950d4d0ce1b8264ea\appcompat-1.0.2\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\c77d2d7d2a36a76ceff3be3a10064bf2\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
@@ -31,7 +31,7 @@ MERGED from [com.google.android.gms:play-services-measurement-base:17.0.0] C:\Us
 MERGED from [com.google.android.gms:play-services-stats:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\488fbfcee7f9e82def1174180302c81d\play-services-stats-17.0.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\4dcf95d1aa85e70d114d3e835cc89ecf\firebase-measurement-connector-18.0.0\AndroidManifest.xml:17:1-25:12
 MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\4ae5c806527406f77c711db15930365f\play-services-ads-identifier-17.0.0\AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\5c24ce031169b006e8387c593e7538ed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:17:1-28:12
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\27c2f9067560f9efbec7dcc5dfb056a1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:17:1-28:12
 MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\ad7e8978b214163478bfde401fa98c83\fragment-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\247f914cac81e7c8d9a2fad2c7abbf38\vectordrawable-animated-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\77f38ede50d86bb3bde02e7424569968\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -60,25 +60,25 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\User
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\89b91c90415f820a35378d852e8c8a88\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\9951022edd0c1aa1cd274f086f532952\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\dc00afe98654b60ddd616a33528e20cf\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:2:1-38:12
-INJECTED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:2:1-38:12
-INJECTED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:2:1-38:12
 	package
-		ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:3:5-35
-		INJECTED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:3:5-35
+		INJECTED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:2:1-38:12
-		INJECTED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:2:1-38:12
+		INJECTED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:2:1-38:12
-		INJECTED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:2:1-38:12
+		INJECTED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:5:5-67
+ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:5:5-67
 MERGED from [com.google.android.gms:play-services-measurement-api:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\1b5522440688f179aa93f432df8ae807\play-services-measurement-api-17.0.0\AndroidManifest.xml:22:5-67
 MERGED from [com.google.android.gms:play-services-measurement-api:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\1b5522440688f179aa93f432df8ae807\play-services-measurement-api-17.0.0\AndroidManifest.xml:22:5-67
 MERGED from [com.google.firebase:firebase-iid:19.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\6cfe46f408152b0cf1be5d6c31bb25ab\firebase-iid-19.0.0\AndroidManifest.xml:23:5-67
@@ -90,9 +90,9 @@ MERGED from [com.google.android.gms:play-services-measurement-impl:17.0.0] C:\Us
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\c3533eb03a7f38a3979b60b44ecfdf18\play-services-measurement-sdk-api-17.0.0\AndroidManifest.xml:23:5-67
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\c3533eb03a7f38a3979b60b44ecfdf18\play-services-measurement-sdk-api-17.0.0\AndroidManifest.xml:23:5-67
 	android:name
-		ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:5:22-64
+		ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:5:22-64
 application
-ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:7:5-36:19
+ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:7:5-36:19
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\3df2fd68af0236fb7b1a24eeed8b503b\material-1.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\3df2fd68af0236fb7b1a24eeed8b503b\material-1.0.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\c77d2d7d2a36a76ceff3be3a10064bf2\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
@@ -137,8 +137,8 @@ MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] C:\Users
 MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\4dcf95d1aa85e70d114d3e835cc89ecf\firebase-measurement-connector-18.0.0\AndroidManifest.xml:22:5-23:19
 MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\4ae5c806527406f77c711db15930365f\play-services-ads-identifier-17.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\4ae5c806527406f77c711db15930365f\play-services-ads-identifier-17.0.0\AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\5c24ce031169b006e8387c593e7538ed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:22:5-26:19
-MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\5c24ce031169b006e8387c593e7538ed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\27c2f9067560f9efbec7dcc5dfb056a1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\27c2f9067560f9efbec7dcc5dfb056a1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.core:core:1.0.1] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\d856a2ad07d784cae061be131eb0ba9a\core-1.0.1\AndroidManifest.xml:22:5-89
 MERGED from [androidx.core:core:1.0.1] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\d856a2ad07d784cae061be131eb0ba9a\core-1.0.1\AndroidManifest.xml:22:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\e06fdc88952171c16a8fa9610bd7aa6c\versionedparcelable-1.0.0\AndroidManifest.xml:22:5-23:19
@@ -148,63 +148,63 @@ MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\filip\.gradle\
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.0.1] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\d856a2ad07d784cae061be131eb0ba9a\core-1.0.1\AndroidManifest.xml:22:18-86
 	android:supportsRtl
-		ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:12:9-35
+		ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:12:9-35
 	android:label
-		ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:10:9-41
+		ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:10:9-41
 	android:roundIcon
-		ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:11:9-54
+		ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:11:9-54
 	android:icon
-		ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:9:9-43
+		ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:9:9-43
 	android:allowBackup
-		ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:8:9-35
+		ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:8:9-35
 	android:theme
-		ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:13:9-52
+		ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:13:9-52
 activity#com.megadev.easylist.activity.editor.LoginActivity
-ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:14:9-22:20
+ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:14:9-22:20
 	android:label
-		ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:15:13-37
+		ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:15:13-37
 	android:theme
-		ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:16:13-56
+		ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:16:13-56
 	android:name
-		ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:14:19-64
+		ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:14:19-64
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:17:13-21:29
+ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:17:13-21:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:18:17-69
+ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:18:17-69
 	android:name
-		ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:18:25-66
+		ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:18:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:20:17-77
+ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:20:17-77
 	android:name
-		ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:20:27-74
+		ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:20:27-74
 activity#com.megadev.easylist.activity.main.MainActivity
-ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:23:9-26:20
+ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:23:9-26:20
 	android:theme
-		ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:25:13-56
+		ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:25:13-56
 	android:name
-		ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:24:13-55
+		ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:24:13-55
 activity#com.megadev.easylist.activity.editor.NewProductActivity
-ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:27:9-29:59
+ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:27:9-29:59
 	android:theme
-		ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:29:13-56
+		ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:29:13-56
 	android:name
-		ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:28:13-63
+		ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:28:13-63
 activity#com.megadev.easylist.activity.editor.NewListActivity
-ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:30:9-32:59
+ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:30:9-32:59
 	android:theme
-		ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:32:13-56
+		ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:32:13-56
 	android:name
-		ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:31:13-60
+		ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:31:13-60
 activity#com.megadev.easylist.activity.main.MainListActivity
-ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:33:9-35:59
+ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:33:9-35:59
 	android:theme
-		ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:35:13-56
+		ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:35:13-56
 	android:name
-		ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml:34:13-59
+		ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml:34:13-59
 uses-sdk
-INJECTED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\3df2fd68af0236fb7b1a24eeed8b503b\material-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\3df2fd68af0236fb7b1a24eeed8b503b\material-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.0.2] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\4b1d54629fa0914950d4d0ce1b8264ea\appcompat-1.0.2\AndroidManifest.xml:20:5-44
@@ -259,8 +259,8 @@ MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] C:\Users
 MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\4dcf95d1aa85e70d114d3e835cc89ecf\firebase-measurement-connector-18.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\4ae5c806527406f77c711db15930365f\play-services-ads-identifier-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\4ae5c806527406f77c711db15930365f\play-services-ads-identifier-17.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\5c24ce031169b006e8387c593e7538ed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\5c24ce031169b006e8387c593e7538ed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\27c2f9067560f9efbec7dcc5dfb056a1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\27c2f9067560f9efbec7dcc5dfb056a1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\ad7e8978b214163478bfde401fa98c83\fragment-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\ad7e8978b214163478bfde401fa98c83\fragment-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\247f914cac81e7c8d9a2fad2c7abbf38\vectordrawable-animated-1.0.0\AndroidManifest.xml:20:5-44
@@ -317,16 +317,16 @@ MERGED from [androidx.print:print:1.0.0] C:\Users\filip\.gradle\caches\transform
 MERGED from [androidx.print:print:1.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\9951022edd0c1aa1cd274f086f532952\print-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\dc00afe98654b60ddd616a33528e20cf\interpolator-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\dc00afe98654b60ddd616a33528e20cf\interpolator-1.0.0\AndroidManifest.xml:20:5-44
-INJECTED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\filip\Desktop\EngSoftware\EasyList\Codificacao\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\filip\AndroidStudioProjects\EasyList\Codificacao\app\src\main\AndroidManifest.xml
 activity#com.google.firebase.auth.internal.FederatedSignInActivity
 ADDED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\c863307d37dfc8f7c794c3c934b2cdaa\firebase-auth-19.0.0\AndroidManifest.xml:24:9-31:50
 	android:excludeFromRecents
@@ -504,11 +504,11 @@ ADDED from [com.google.android.gms:play-services-measurement:17.0.0] C:\Users\fi
 	android:name
 		ADDED from [com.google.android.gms:play-services-measurement:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\2babcf0c267ec59214cfddc5d20ee8d0\play-services-measurement-17.0.0\AndroidManifest.xml:49:13-87
 meta-data#com.google.android.gms.version
-ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\5c24ce031169b006e8387c593e7538ed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\27c2f9067560f9efbec7dcc5dfb056a1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
 	android:value
-		ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\5c24ce031169b006e8387c593e7538ed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\27c2f9067560f9efbec7dcc5dfb056a1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
 	android:name
-		ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\5c24ce031169b006e8387c593e7538ed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\27c2f9067560f9efbec7dcc5dfb056a1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
 provider#androidx.lifecycle.ProcessLifecycleOwnerInitializer
 ADDED from [androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\filip\.gradle\caches\transforms-2\files-2.1\020ca84081f1b5abc9c268e6cb8b944f\lifecycle-process-2.0.0\AndroidManifest.xml:23:9-27:43
 	android:authorities

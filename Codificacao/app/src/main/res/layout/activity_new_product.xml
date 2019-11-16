@@ -1,50 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.editor.NewProductActivity">
 
+    <EditText
+        android:id="@+id/etProduto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="90dp"
+        android:ems="10"
+        android:hint="@string/hintProduto"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etDescricao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etProduto"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="90dp"
+        android:hint="@string/hintDescricao"
+        android:importantForAutofill="no"
+        android:inputType="textLongMessage" />
+
+    <EditText
+        android:id="@+id/etQuantidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etDescricao"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="90dp"
+        android:hint="@string/hintQuantidade"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"/>
+
+    <TextView
+        android:id="@+id/tvSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/spnMedida"
+        android:layout_alignStart="@id/spnMedida"
+        android:layout_marginBottom="-60dp"
+        android:text="@string/unidade_de_medida" />
+
+    <Spinner
+        android:id="@+id/spnMedida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etQuantidade"
+        android:layout_alignStart="@id/etQuantidade"
+        android:layout_alignEnd="@id/etQuantidade"
+        android:layout_centerHorizontal="true"
+        android:entries="@array/units_arrays"
+        android:layout_marginTop="60dp" />
+
     <Button
         android:id="@+id/btnSalvarProduto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/spnMedida"
+        android:layout_centerHorizontal="true"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="70dp"
         android:layout_marginEnd="8dp"
-        android:text="@string/txtSalvar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etQuantidade" />
+        android:text="@string/txtSalvar" />
 
-    <EditText
-        android:id="@+id/etQuantidade"
-        android:layout_width="317dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:hint="@string/hintQuantidade"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etProduto" />
-
-    <EditText
-        android:id="@+id/etProduto"
-        android:layout_width="323dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:hint="@string/hintProduto"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

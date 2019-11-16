@@ -25,6 +25,7 @@ animator mtrl_fab_hide_motion_spec
 animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
+array units_arrays
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -1113,6 +1114,7 @@ id btnSalvarProduto
 id buttonPanel
 id by
 id card_item_list
+id card_item_list_relative
 id center
 id center_horizontal
 id center_vertical
@@ -1144,6 +1146,7 @@ id edit_query
 id end
 id enterAlways
 id enterAlwaysCollapsed
+id etDescricao
 id etNomeLista
 id etProduto
 id etQuantidade
@@ -1250,6 +1253,7 @@ id snap
 id snapMargins
 id spacer
 id split_action_bar
+id spnMedida
 id spread
 id spread_inside
 id src_atop
@@ -1277,6 +1281,7 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
+id toolbar_list_title
 id toolbar_title
 id top
 id topPanel
@@ -1286,15 +1291,18 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id tvDescricao
 id tvListName
 id tvListaNome
 id tvProductName
 id tvProduto
 id tvQuantidade
+id tvSpinner
 id uniform
 id unlabeled
 id up
 id useLogo
+id vLinha
 id view_offset_helper
 id visible
 id wide
@@ -1467,6 +1475,7 @@ string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
 string hide_bottom_view_on_scroll_behavior
+string hintDescricao
 string hintLista
 string hintProduto
 string hintQuantidade
@@ -1502,6 +1511,7 @@ string txtExcluir
 string txtListaVazia
 string txtListas
 string txtSalvar
+string unidade_de_medida
 string welcome
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light

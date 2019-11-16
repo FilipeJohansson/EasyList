@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 
 import java.util.List;
 
+import com.google.firebase.auth.FirebaseUser;
 import com.megadev.easylist.api.ApiClient;
 import com.megadev.easylist.api.ApiInterface;
 import com.megadev.easylist.model.Item;
@@ -20,7 +21,7 @@ public class MainListPresenter {
         this.view = view;
     }
 
-    void getData(int ID_LISTA) {
+    void getData(final int ID_LISTA) {
 
         view.showLoading();
 
@@ -42,6 +43,42 @@ public class MainListPresenter {
             public void onFailure(@NonNull Call<List<Item>> call, @NonNull Throwable t) {
                 view.hideLoading();
                 view.onErrorLoading(t.getLocalizedMessage());
+            }
+        });
+
+    }
+
+    void updateItem(final int ID_ITEM, final int STA_CHECK) {
+
+        view.showLoading();
+
+        ApiInterface apiInterface = ApiClient.getApiClient()
+                .create(ApiInterface.class);
+        Call<Item> call = apiInterface.updateItem(ID_ITEM, STA_CHECK);
+        call.enqueue(new Callback<Item>() {
+            @Override
+            public void onResponse(@NonNull Call<Item> call, @NonNull Response<Item> response) {
+                view.hideLoading();
+                if (response.isSuccessful() && response.body() != null) {
+                    Boolean success = response.body().getSuccess();
+
+                    if (success) {
+                        view.onAddSuccess(response.body().getMessage());
+
+                    } else {
+                        view.onAddError(response.body().getMessage());
+
+
+                    }
+
+                }
+
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<Item> call, @NonNull Throwable t) {
+                view.hideLoading();
+                view.onAddError(t.getLocalizedMessage());
             }
         });
 

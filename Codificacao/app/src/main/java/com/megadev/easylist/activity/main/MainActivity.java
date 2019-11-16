@@ -79,12 +79,12 @@ public class MainActivity extends AppCompatActivity implements MainView {
             Intent intent = new Intent(this, MainListActivity.class);
 
             int sessionId = lista.get(position).getID_LISTA();
+            String nmeLista = lista.get(position).getNME_LISTA();
 
             intent.putExtra("EXTRA_SESSION_ID", sessionId);
+            intent.putExtra("EXTRA_LIST_NAME", nmeLista);
             startActivity(intent);
 
-            /*String nome_lista = lista.get(position).getNME_LISTA();
-            Toast.makeText(this, nome_lista, Toast.LENGTH_SHORT).show();*/
         });
 
         toolbar.setOnClickListener(view -> Logout());

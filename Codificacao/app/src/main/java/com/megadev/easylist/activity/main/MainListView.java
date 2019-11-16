@@ -11,4 +11,7 @@ public interface MainListView {
     void onGetResult(List<Item> itens);
     void onErrorLoading(String message);
 
+    void onAddSuccess(String message);
+    void onAddError(String message);
+
 }

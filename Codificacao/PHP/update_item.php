@@ -7,14 +7,7 @@
 
     require_once("connect.php");
 
-    $query = $pdo->prepare("INSERT INTO `item` (
-      STA_CHECK, QUANTIDADE, VLR_UNITARIO,
-      VLR_TOTAL, ID_LISTA, NME_PRODUTO,
-      DSC_PRODUTO, UN_MEDIDA
-    ) VALUES (
-      '$STA_CHECK', '$QUANTIDADE', '$VLR_UNITARIO',
-      '$VLR_TOTAL', '$ID_LISTA', '$NME_PRODUTO',
-      '$DSC_PRODUTO', '$UN_MEDIDA');");
+    $query = $pdo->prepare("UPDATE `item` SET STA_CHECK = '$STA_CHECK' WHERE ID_ITEM = '$ID_ITEM';");
 
     $query->execute();
 

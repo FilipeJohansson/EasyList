@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,13 +13,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.megadev.easylist.R;
-import com.megadev.easylist.activity.main.MainListActivity;
 
 public class NewProductActivity extends AppCompatActivity implements EditorView {
 
     private FirebaseAuth mAuth;
 
-    private EditText etQuantidade, etProduto;
+    private EditText etQuantidade, etProduto, etDescricao;
+    private Spinner spnMedida;
     private Button btnSalvar;
 
     ProgressDialog progressDialog;
@@ -37,6 +38,9 @@ public class NewProductActivity extends AppCompatActivity implements EditorView 
 
         etProduto = (EditText) findViewById(R.id.etProduto);
         etQuantidade = (EditText) findViewById(R.id.etQuantidade);
+        etDescricao = (EditText) findViewById(R.id.etDescricao);
+        spnMedida = (Spinner) findViewById(R.id.spnMedida);
+
         btnSalvar = (Button) findViewById(R.id.btnSalvarProduto);
 
         progressDialog = new ProgressDialog(this);
@@ -44,20 +48,23 @@ public class NewProductActivity extends AppCompatActivity implements EditorView 
 
         btnSalvar.setOnClickListener(view -> {
             String NME_PRODUTO = etProduto.getText().toString();
+            String DESCRICAO = etDescricao.getText().toString();
             int QUANTIDADE = Integer.parseInt(etQuantidade.getText().toString());
+            String MEDIDA = spnMedida.getSelectedItem().toString();
             FirebaseUser user = mAuth.getCurrentUser();
 
-            if (NME_PRODUTO.isEmpty()) {
+            if (NME_PRODUTO.isEmpty())
                 etProduto.setError("Por favor, digite um produto");
-
-            } else {
+            else if (etQuantidade.getText().toString().isEmpty())
+                etQuantidade.setError("Por favor, coloque uma quantidade");
+            else {
                 presenter.saveItem(0,
                         QUANTIDADE,
                         2.3f,
                         sessionId,
                         NME_PRODUTO,
-                        "Teste",
-                        "Un",
+                        DESCRICAO,
+                        MEDIDA,
                         user);
 
             }

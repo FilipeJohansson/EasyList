@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1055012844457-n37m39iu96p6026e39j0gggi7ctftfll.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.megadev.easylist",
+            "certificate_hash": "a79b76c84a142c159f00ced3c1058c26a7b52422"
+          }
+        },
+        {
           "client_id": "1055012844457-q89m404010jmu5jjvsvqnu0gaok912tk.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
