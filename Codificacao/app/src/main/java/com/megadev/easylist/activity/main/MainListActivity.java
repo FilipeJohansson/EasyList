@@ -1,19 +1,13 @@
 package com.megadev.easylist.activity.main;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -23,8 +17,8 @@ import com.megadev.easylist.activity.editor.MainListView;
 import com.megadev.easylist.model.Item;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.MotionEventCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -34,13 +28,15 @@ import java.util.Objects;
 
 public class MainListActivity extends AppCompatActivity implements MainListView {
 
-    private static final String DEBUG_TAG = "TAGG";
     private FirebaseAuth mAuth;
 
     private FloatingActionButton fab;
     private RecyclerView recyclerView;
     private SwipeRefreshLayout refreshLayout;
     private ImageView backList;
+    private ImageView shareList;
+
+    private int sessionID;
 
     MainListPresenter presenter;
     MainListAdapter adapter;
@@ -55,7 +51,7 @@ public class MainListActivity extends AppCompatActivity implements MainListView 
 
         mAuth = FirebaseAuth.getInstance();
 
-        int sessionID = Objects.requireNonNull(getIntent().getExtras()).getInt("EXTRA_SESSION_ID");
+        sessionID = Objects.requireNonNull(getIntent().getExtras()).getInt("EXTRA_SESSION_ID");
         String nmeLista = getIntent().getExtras().getString("EXTRA_LIST_NAME");
 
         TextView toolbar_list_title = findViewById(R.id.toolbar_list_title);
@@ -88,6 +84,12 @@ public class MainListActivity extends AppCompatActivity implements MainListView 
             startActivity(intent);
         });
 
+        shareList = findViewById(R.id.shareList);
+        shareList.setOnClickListener(view -> {
+            Intent intent = new Intent(this, shareActivity.class);
+            startActivity(intent);
+        });
+
         fab = findViewById(R.id.fab);
         fab.setOnClickListener(view -> {
             Intent intent = new Intent(MainListActivity.this, NewProductActivity.class);
@@ -95,21 +97,40 @@ public class MainListActivity extends AppCompatActivity implements MainListView 
             startActivity(intent);
         });
 
-        itemClickListener = ((view, position) -> {
-            int ID_ITEM = item.get(position).getID_ITEM();
-            int STA_CHECK = item.get(position).getSTA_CHECK();
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this, R.style.MyDialogTheme);
+        itemClickListener = new MainListAdapter.ItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                int ID_ITEM = item.get(position).getID_ITEM();
+                int STA_CHECK = item.get(position).getSTA_CHECK();
 
-            if (STA_CHECK == 1)
-                STA_CHECK = 0;
-            else
-                STA_CHECK = 1;
+                if (STA_CHECK == 1)
+                    STA_CHECK = 0;
+                else
+                    STA_CHECK = 1;
 
-            presenter.updateItem(ID_ITEM, STA_CHECK);
+                presenter.updateItem(ID_ITEM, STA_CHECK);
 
-            Handler handler = new Handler();
-            handler.postDelayed(() -> refreshPage(sessionID), 300);
+                Handler handler = new Handler();
+                handler.postDelayed(() -> refreshPage(sessionID), 300);
+            }
 
-        });
+            @Override
+            public void onLongItemClick(View view, int position) {
+                alertDialog.setTitle("Deletar lista");
+                alertDialog.setMessage("Você deseja deletar '" + item.get(position).getNME_PRODUTO() + "'?");
+                alertDialog.setPositiveButton("Sim", (dialogInterface, i) -> {
+                    dialogInterface.dismiss();
+                    presenter.deleteItem(item.get(position).getID_ITEM());
+
+                    Handler handler = new Handler();
+                    handler.postDelayed(() -> refreshPage(sessionID), 300);
+                });
+                alertDialog.setNegativeButton("Não",
+                        (dialogInterface, i) -> dialogInterface.dismiss());
+                alertDialog.show();
+            }
+        };
 
     }
 
@@ -127,6 +148,13 @@ public class MainListActivity extends AppCompatActivity implements MainListView 
 
         refreshPage(sessionID);
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        refreshPage(sessionID);
     }
 
     private void updateUI(FirebaseUser currentUser) {
@@ -183,6 +211,5 @@ public class MainListActivity extends AppCompatActivity implements MainListView 
         );
 
     }
-
 
 }

@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">EasyList</string>
-    <string name="by">by <bold>MegaDev</bold></string>
+    <string name="by">by MegaDev</string>
     <string name="megadev">MegaDev</string>
 
     <string name="txtSalvar">Salvar</string>
@@ -45,12 +45,25 @@
     <string name="hintDescricao">Descrição</string>
     <string name="_30_30">30/30</string>
     <string name="_0_30">0/30</string>
+    <string name="e_mail">E-mail</string>
+    <string name="compartilhar_para">Compartilhar para:</string>
+    <string name="compartilhar">Compartilhar</string>
+    <string name="adicionar_lista">Adicionar lista</string>
+    <string name="compartilhar_lista">Compartilhar lista</string>
+    <string name="compartilhar_com">Compartilhar com:</string>
+    <string name="adicionar_item">Adicionar item</string>
 
     <string-array name="units_arrays">
-        <item>Un</item>
+        <item>un</item>
+        <item>mL</item>
         <item>L</item>
-        <item>Kg</item>
+        <item>kg</item>
         <item>g</item>
+        <item>mg</item>
+        <item>cm</item>
+        <item>m</item>
+        <item>m²</item>
+        <item>m³</item>
     </string-array>
 
 

@@ -1,17 +1,19 @@
 package com.megadev.easylist.activity.main;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.DisplayMetrics;
+import android.view.Gravity;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -19,7 +21,7 @@ import com.megadev.easylist.R;
 import com.megadev.easylist.activity.editor.EditorPresenter;
 import com.megadev.easylist.activity.editor.EditorView;
 
-public class NewListActivity extends AppCompatActivity implements EditorView {
+public class NewListActivity extends Activity implements EditorView {
 
     private FirebaseAuth mAuth;
 
@@ -35,6 +37,21 @@ public class NewListActivity extends AppCompatActivity implements EditorView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_list);
+
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+
+        int width = displayMetrics.widthPixels;
+        int height = displayMetrics.heightPixels;
+
+        getWindow().setLayout((int)(width*.8), (int)(height*.4));
+
+        WindowManager.LayoutParams params = getWindow().getAttributes();
+        params.gravity = Gravity.CENTER;
+        params.x = 0;
+        params.y = -20;
+
+        getWindow().setAttributes(params);
 
         presenter = new EditorPresenter(this);
 

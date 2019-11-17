@@ -69,7 +69,7 @@ public class MainListAdapter extends RecyclerView.Adapter<MainListAdapter.Recycl
         return itens.size();
     }
 
-    class RecyclerViewAdapter extends RecyclerView.ViewHolder implements View.OnClickListener {
+    class RecyclerViewAdapter extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
 
         CheckBox productCheckBox;
         TextView tvProductName;
@@ -93,6 +93,7 @@ public class MainListAdapter extends RecyclerView.Adapter<MainListAdapter.Recycl
 
             this.itemClickListener = itemClickListener;
             card_item_list.setOnClickListener(this);
+            card_item_list.setOnLongClickListener(this);
 
         }
 
@@ -101,10 +102,17 @@ public class MainListAdapter extends RecyclerView.Adapter<MainListAdapter.Recycl
             itemClickListener.onItemClick(view, getAdapterPosition());
 
         }
+
+        @Override
+        public boolean onLongClick(View view) {
+            itemClickListener.onLongItemClick(view, getAdapterPosition());
+            return true;
+        }
     }
 
     public interface ItemClickListener {
         void onItemClick(View view, int position);
+        void onLongItemClick(View view, int position);
 
     }
 

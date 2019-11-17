@@ -83,4 +83,40 @@ public class MainListPresenter {
 
     }
 
+    public void deleteItem(final int ID_ITEM) {
+
+        view.showLoading();
+
+        ApiInterface apiInterface = ApiClient.getApiClient()
+                .create(ApiInterface.class);
+        Call<Item> call = apiInterface.deleteItem(ID_ITEM);
+        call.enqueue(new Callback<Item>() {
+            @Override
+            public void onResponse(@NonNull Call<Item> call, @NonNull Response<Item> response) {
+                view.hideLoading();
+                if (response.isSuccessful() && response.body() != null) {
+                    Boolean success = response.body().getSuccess();
+
+                    if (success) {
+                        view.onAddSuccess(response.body().getMessage());
+
+                    } else {
+                        view.onAddError(response.body().getMessage());
+
+
+                    }
+
+                }
+
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<Item> call, @NonNull Throwable t) {
+                view.hideLoading();
+                view.onAddError(t.getLocalizedMessage());
+            }
+        });
+
+    }
+
 }

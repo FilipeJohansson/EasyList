@@ -18,12 +18,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp"
-            android:text="@string/txtListas"
+            android:paddingTop="10dp"
+            android:text="@string/app_name"
+            android:fontFamily="sans-serif-condensed-light"
+            android:textColor="#2E8DCA"
             android:textAlignment="center"
-            android:textColor="#47525E"
-            android:textSize="24sp" />
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/by"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="@string/by"
+            android:textSize="16sp" />
 
     </RelativeLayout>
 

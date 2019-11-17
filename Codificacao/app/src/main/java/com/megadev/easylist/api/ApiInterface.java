@@ -64,4 +64,10 @@ public interface ApiInterface {
             @Field("ID_LISTA") int ID_LISTA
     );
 
+    @FormUrlEncoded
+    @POST("delete_item.php")
+    Call<Item> deleteItem(
+            @Field("ID_ITEM") int ID_ITEM
+    );
+
 }

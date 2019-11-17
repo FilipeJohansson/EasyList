@@ -36,17 +36,19 @@
         </activity>
         <activity
             android:name="com.megadev.easylist.activity.main.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        <activity
-            android:name="com.megadev.easylist.activity.main.NewProductActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="com.megadev.easylist.activity.main.NewListActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.megadev.easylist.activity.main.MainListActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.megadev.easylist.activity.main.NewProductActivity"
+            android:theme="@style/AppTheme.popup" />
+        <activity
+            android:name="com.megadev.easylist.activity.main.NewListActivity"
+            android:theme="@style/AppTheme.popup" />
+        <activity
+            android:name="com.megadev.easylist.activity.main.shareActivity"
+            android:theme="@style/AppTheme.popup" />
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"

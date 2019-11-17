@@ -8,7 +8,6 @@
     require_once("connect.php");
 
     $query = $pdo->prepare("UPDATE `item` SET STA_CHECK = '$STA_CHECK' WHERE ID_ITEM = '$ID_ITEM';");
-
     $query->execute();
 
     if ($query) {

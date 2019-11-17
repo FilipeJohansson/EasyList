@@ -1,18 +1,20 @@
 package com.megadev.easylist.activity.main;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.DisplayMetrics;
+import android.view.Gravity;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -20,14 +22,15 @@ import com.megadev.easylist.R;
 import com.megadev.easylist.activity.editor.EditorPresenter;
 import com.megadev.easylist.activity.editor.EditorView;
 
-public class NewProductActivity extends AppCompatActivity implements EditorView {
+import java.util.Objects;
+
+public class NewProductActivity extends Activity implements EditorView {
 
     private FirebaseAuth mAuth;
 
     private EditText etQuantidade, etProduto, etDescricao;
     private TextView tvCountNameProduct, tvCountDesc, tvCountQnt;
     private Spinner spnMedida;
-    private Button btnSalvar;
 
     ProgressDialog progressDialog;
 
@@ -39,20 +42,35 @@ public class NewProductActivity extends AppCompatActivity implements EditorView 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_product);
 
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+
+        int width = displayMetrics.widthPixels;
+        int height = displayMetrics.heightPixels;
+
+        getWindow().setLayout((int)(width*.8), (int)(height*.6));
+
+        WindowManager.LayoutParams params = getWindow().getAttributes();
+        params.gravity = Gravity.CENTER;
+        params.x = 0;
+        params.y = -20;
+
+        getWindow().setAttributes(params);
+
         mAuth = FirebaseAuth.getInstance();
         presenter = new EditorPresenter(this);
 
-        int sessionId = getIntent().getExtras().getInt("EXTRA_SESSION_ID");
+        int sessionId = Objects.requireNonNull(getIntent().getExtras()).getInt("EXTRA_SESSION_ID");
 
-        etProduto = (EditText) findViewById(R.id.etProduto);
-        etQuantidade = (EditText) findViewById(R.id.etQuantidade);
-        etDescricao = (EditText) findViewById(R.id.etDescricao);
-        tvCountNameProduct = (TextView) findViewById(R.id.tvCountNameProduct);
-        tvCountDesc = (TextView) findViewById(R.id.tvCountDesc);
-        tvCountQnt = (TextView) findViewById(R.id.tvCountQnt);
-        spnMedida = (Spinner) findViewById(R.id.spnMedida);
+        etProduto = findViewById(R.id.etProduto);
+        etQuantidade = findViewById(R.id.etQuantidade);
+        etDescricao = findViewById(R.id.etDescricao);
+        tvCountNameProduct = findViewById(R.id.tvCountNameProduct);
+        tvCountDesc = findViewById(R.id.tvCountDesc);
+        tvCountQnt = findViewById(R.id.tvCountQnt);
+        spnMedida = findViewById(R.id.spnMedida);
 
-        btnSalvar = (Button) findViewById(R.id.btnSalvarProduto);
+        Button btnSalvar = findViewById(R.id.btnSalvarProduto);
 
         tvCountNameProduct.setText("0/20");
         tvCountDesc.setText("0/30");
@@ -138,8 +156,8 @@ public class NewProductActivity extends AppCompatActivity implements EditorView 
                 etQuantidade.setError("Limite de caracteres excedido");
             else if (QUANTIDADE > 999.9f)
                 etQuantidade.setError("Valor máximo permitido: 999.9");
-            else if (QUANTIDADE < 1)
-                etQuantidade.setError("Quantidade mínima: 1");
+            else if (QUANTIDADE < 0)
+                etQuantidade.setError("Quantidade mínima: 0");
             else
                 presenter.saveItem(0,
                         QUANTIDADE,
