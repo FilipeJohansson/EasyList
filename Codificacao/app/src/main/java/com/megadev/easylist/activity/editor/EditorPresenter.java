@@ -9,6 +9,8 @@ import com.megadev.easylist.model.Item;
 import com.megadev.easylist.model.Lista;
 import com.megadev.easylist.model.User;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -21,12 +23,12 @@ public class EditorPresenter {
         this.view = view;
     }
 
-    public void saveUser(final String UID_USUARIO, final FirebaseUser user) {
+    public void saveUser(final String UID_USUARIO, final String EMAIL, final FirebaseUser user) {
         view.showProgress();
 
         ApiInterface apiInterface = ApiClient.getApiClient()
                 .create(ApiInterface.class);
-        Call<User> call = apiInterface.saveUser(UID_USUARIO);
+        Call<User> call = apiInterface.saveUser(UID_USUARIO, EMAIL);
 
         call.enqueue(new Callback<User>() {
             @Override
@@ -145,11 +147,11 @@ public class EditorPresenter {
 
     }
 
-    public void deleteLista(final int ID_LISTA, final FirebaseUser user) {
+    public void shareList(final int ID_LISTA, final int ID_COMPARTILHADO, final FirebaseUser user) {
         view.showProgress();
 
         ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
-        Call<Lista> call = apiInterface.deleteLista(ID_LISTA);
+        Call<Lista> call = apiInterface.shareList(ID_LISTA, ID_COMPARTILHADO);
 
         call.enqueue(new Callback<Lista>() {
             @Override
@@ -159,14 +161,10 @@ public class EditorPresenter {
                 if (response.isSuccessful() && response.body() != null) {
                     Boolean success = response.body().getSuccess();
 
-                    if (success) {
+                    if (success)
                         view.onAddSuccess(response.body().getMessage(), user);
-
-                    } else {
+                    else
                         view.onAddError(response.body().getMessage(), user);
-
-
-                    }
 
                 }
 
@@ -175,11 +173,37 @@ public class EditorPresenter {
             @Override
             public void onFailure(@NonNull Call<Lista> call, @NonNull Throwable t) {
                 view.hideProgress();
-
                 view.onAddError(t.getLocalizedMessage(), user);
-
             }
         });
+
+    }
+
+    public void getUser(final String EMAIL, final FirebaseUser user) {
+        view.showProgress();
+
+        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        Call<List<User>> call = apiInterface.getUser(EMAIL);
+
+        call.enqueue(new Callback<List<User>>() {
+            @Override
+            public void onResponse(@NonNull Call<List<User>> call, @NonNull Response<List<User>> response) {
+                view.hideProgress();
+
+                if (response.isSuccessful() && response.body() != null) {
+                    view.onGetResult(response.body());
+
+                }
+
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<List<User>> call, @NonNull Throwable t) {
+                view.hideProgress();
+                view.onAddError(t.getLocalizedMessage(), user);
+            }
+        });
+
     }
 
 }

@@ -21,7 +21,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.megadev.easylist.R;
 import com.megadev.easylist.activity.editor.EditorPresenter;
 import com.megadev.easylist.activity.editor.EditorView;
+import com.megadev.easylist.model.User;
 
+import java.util.List;
 import java.util.Objects;
 
 public class NewProductActivity extends Activity implements EditorView {
@@ -42,6 +44,7 @@ public class NewProductActivity extends Activity implements EditorView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_product);
 
+        /* PopUp activity */
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
 
@@ -56,6 +59,7 @@ public class NewProductActivity extends Activity implements EditorView {
         params.y = -20;
 
         getWindow().setAttributes(params);
+        /* /PopUp activity/ */
 
         mAuth = FirebaseAuth.getInstance();
         presenter = new EditorPresenter(this);
@@ -174,11 +178,14 @@ public class NewProductActivity extends Activity implements EditorView {
     @Override
     protected void onStart() {
         super.onStart();
+        updateUI(mAuth.getCurrentUser());
 
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        updateUI(currentUser);
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateUI(mAuth.getCurrentUser());
     }
 
     @Override
@@ -196,7 +203,7 @@ public class NewProductActivity extends Activity implements EditorView {
         Toast.makeText(NewProductActivity.this,
                 message,
                 Toast.LENGTH_SHORT).show();
-        finish(); // back to main activity
+        finish();
     }
 
     @Override
@@ -204,7 +211,11 @@ public class NewProductActivity extends Activity implements EditorView {
         Toast.makeText(NewProductActivity.this,
                 message,
                 Toast.LENGTH_SHORT).show();
-        // if error, still in this activity
+    }
+
+    @Override
+    public void onGetResult(List<User> users) {
+
     }
 
     private void updateUI(FirebaseUser currentUser) {
@@ -218,4 +229,3 @@ public class NewProductActivity extends Activity implements EditorView {
     }
 
 }
-

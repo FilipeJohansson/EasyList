@@ -24,6 +24,10 @@ import com.google.firebase.auth.GoogleAuthProvider;
 import com.megadev.easylist.R;
 import com.megadev.easylist.activity.editor.EditorPresenter;
 import com.megadev.easylist.activity.editor.EditorView;
+import com.megadev.easylist.model.User;
+
+import java.util.List;
+import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity implements EditorView {
 
@@ -95,8 +99,6 @@ public class LoginActivity extends AppCompatActivity implements EditorView {
     }
 
     private void firebaseAuthWithGoogle(GoogleSignInAccount account) {
-        Log.d("TAG", "firebaseAuthWithGoogle: " + account.getId());
-
         AuthCredential credential = GoogleAuthProvider
                 .getCredential(account.getIdToken(), null);
 
@@ -104,17 +106,14 @@ public class LoginActivity extends AppCompatActivity implements EditorView {
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
                         progressBar.setVisibility(View.INVISIBLE);
-                        Log.d("TAG", "signin success");
 
                         FirebaseUser user = mAuth.getCurrentUser();
-
-                        String UID_USUARIO = mAuth.getUid().trim();
-
-                        presenter.saveUser(UID_USUARIO, user);
+                        String UID_USUARIO = Objects.requireNonNull(mAuth.getUid()).trim();
+                        String EMAIL = user.getEmail();
+                        presenter.saveUser(UID_USUARIO, EMAIL, user);
 
                     } else {
                         progressBar.setVisibility(View.INVISIBLE);
-                        Log.w("TAG", "signin failure", task.getException());
 
                         Toast.makeText(this, "Erro ao entrar", Toast.LENGTH_SHORT).show();
                         updateUI(null);
@@ -129,7 +128,6 @@ public class LoginActivity extends AppCompatActivity implements EditorView {
         if (user != null) {
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
-
         }
 
     }
@@ -156,7 +154,11 @@ public class LoginActivity extends AppCompatActivity implements EditorView {
         Toast.makeText(LoginActivity.this,
                 message,
                 Toast.LENGTH_SHORT).show();
-        // if error, still in this activity
+    }
+
+    @Override
+    public void onGetResult(List<User> users) {
+
     }
 
 }

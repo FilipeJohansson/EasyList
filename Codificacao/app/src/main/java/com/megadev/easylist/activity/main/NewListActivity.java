@@ -20,6 +20,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.megadev.easylist.R;
 import com.megadev.easylist.activity.editor.EditorPresenter;
 import com.megadev.easylist.activity.editor.EditorView;
+import com.megadev.easylist.model.User;
+
+import java.util.List;
 
 public class NewListActivity extends Activity implements EditorView {
 
@@ -38,6 +41,7 @@ public class NewListActivity extends Activity implements EditorView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_list);
 
+        /* PopUp activity */
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
 
@@ -52,6 +56,7 @@ public class NewListActivity extends Activity implements EditorView {
         params.y = -20;
 
         getWindow().setAttributes(params);
+        /* /PopUp activity/ */
 
         presenter = new EditorPresenter(this);
 
@@ -102,9 +107,14 @@ public class NewListActivity extends Activity implements EditorView {
     protected void onStart() {
         super.onStart();
 
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        updateUI(currentUser);
+        updateUI(mAuth.getCurrentUser());
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        updateUI(mAuth.getCurrentUser());
     }
 
     @Override
@@ -131,6 +141,11 @@ public class NewListActivity extends Activity implements EditorView {
                 message,
                 Toast.LENGTH_SHORT).show();
         // if error, still in this activity
+    }
+
+    @Override
+    public void onGetResult(List<User> users) {
+
     }
 
     private void updateUI(FirebaseUser currentUser) {

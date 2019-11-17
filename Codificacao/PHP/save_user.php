@@ -2,10 +2,11 @@
 
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $UID_USUARIO = $_POST['UID_USUARIO'];
+    $EMAIL = $_POST['EMAIL'];
 
     require_once("connect.php");
 
-    $query = $pdo->prepare("INSERT INTO `usuario` (UID) VALUES ('$UID_USUARIO');");
+    $query = $pdo->prepare("INSERT INTO `usuario` (UID, EMAIL) VALUES ('$UID_USUARIO', '$EMAIL');");
     $query->execute();
 
     if ($query) {

@@ -87,6 +87,7 @@ public class MainListActivity extends AppCompatActivity implements MainListView 
         shareList = findViewById(R.id.shareList);
         shareList.setOnClickListener(view -> {
             Intent intent = new Intent(this, shareActivity.class);
+            intent.putExtra("EXTRA_SESSION_ID", sessionID);
             startActivity(intent);
         });
 
@@ -154,6 +155,7 @@ public class MainListActivity extends AppCompatActivity implements MainListView 
     protected void onResume() {
         super.onResume();
 
+        updateUI(mAuth.getCurrentUser());
         refreshPage(sessionID);
     }
 

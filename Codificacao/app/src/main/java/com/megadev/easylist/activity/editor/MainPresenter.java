@@ -45,7 +45,6 @@ public class MainPresenter {
     }
 
     public void deleteLista(final int ID_LISTA) {
-
         view.showLoading();
 
         ApiInterface apiInterface = ApiClient.getApiClient()

@@ -16,6 +16,8 @@ public class Lista {
     @Expose
     @SerializedName("ID_USUARIO") private int ID_USUARIO;
     @Expose
+    @SerializedName("ID_COMPARTILHADO") private int ID_COMPARTILHADO;
+    @Expose
     @SerializedName("success") private Boolean success;
     @Expose
     @SerializedName("message") private String message;
@@ -46,6 +48,26 @@ public class Lista {
 
     public void setID_USUARIO(int ID_USUARIO) {
         this.ID_USUARIO = ID_USUARIO;
+    }
+
+    public void setID_LISTA(int ID_LISTA) {
+        this.ID_LISTA = ID_LISTA;
+    }
+
+    public int getID_COMPARTILHADO() {
+        return ID_COMPARTILHADO;
+    }
+
+    public void setID_COMPARTILHADO(int ID_COMPARTILHADO) {
+        this.ID_COMPARTILHADO = ID_COMPARTILHADO;
+    }
+
+    public void setSuccess(Boolean success) {
+        this.success = success;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public Boolean getSuccess() {

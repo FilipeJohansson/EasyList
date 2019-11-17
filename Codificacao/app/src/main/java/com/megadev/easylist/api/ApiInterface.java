@@ -18,7 +18,8 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("save_user.php")
     Call<User> saveUser(
-            @Field("UID_USUARIO") String UID_USUARIO
+            @Field("UID_USUARIO") String UID_USUARIO,
+            @Field("EMAIL") String EMAIL
     );
 
     @FormUrlEncoded
@@ -56,6 +57,18 @@ public interface ApiInterface {
     @GET("request_itens.php")
     Call<List<Item>> getItens(
             @Query("ID_LISTA") int ID_LISTA
+    );
+
+    @GET("request_user.php")
+    Call<List<User>> getUser(
+            @Query("EMAIL") String EMAIL
+    );
+
+    @FormUrlEncoded
+    @POST("share_list.php")
+    Call<Lista> shareList(
+            @Query("ID_LISTA") int ID_LISTA,
+            @Query("ID_COMPARTILHADO") int ID_COMPARTILHADO
     );
 
     @FormUrlEncoded

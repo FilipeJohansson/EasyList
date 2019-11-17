@@ -141,7 +141,6 @@ public class MainActivity extends AppCompatActivity implements MainView {
         fab.show();
 
         UID_USUARIO = Objects.requireNonNull(mAuth.getUid()).trim();
-
         refreshPage(UID_USUARIO);
 
     }
@@ -150,17 +149,15 @@ public class MainActivity extends AppCompatActivity implements MainView {
     protected void onResume() {
         super.onResume();
 
+        updateUI(mAuth.getCurrentUser());
         refreshPage(UID_USUARIO);
     }
 
     private void updateUI(FirebaseUser currentUser) {
-
         if (currentUser == null) {
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(intent);
-
         }
-
     }
 
     @Override
