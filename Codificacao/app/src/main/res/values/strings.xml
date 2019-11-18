@@ -52,6 +52,8 @@
     <string name="compartilhar_lista">Compartilhar lista</string>
     <string name="compartilhar_com">Compartilhar com:</string>
     <string name="adicionar_item">Adicionar item</string>
+    <string name="back">back</string>
+    <string name="ahare">ahare</string>
 
     <string-array name="units_arrays">
         <item>un</item>

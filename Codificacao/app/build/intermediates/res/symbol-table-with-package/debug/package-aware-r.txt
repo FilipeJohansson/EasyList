@@ -1092,6 +1092,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable itenslist
+drawable logout
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
@@ -1520,8 +1521,10 @@ string action_sign_in
 string action_sign_in_short
 string adicionar_item
 string adicionar_lista
+string ahare
 string app_name
 string appbar_scrolling_view_behavior
+string back
 string bottom_sheet_behavior
 string btnCancelar
 string btnConfirmar

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
     private FloatingActionButton fab;
     private RecyclerView recyclerView;
     private SwipeRefreshLayout refreshLayout;
+    private ImageView logout;
 
     private String UID_USUARIO;
 
@@ -61,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
         String UID_USUARIO = Objects.requireNonNull(mAuth.getUid()).trim();
 
-        TextView toolbar = findViewById(R.id.toolbar_title);
+        logout = findViewById(R.id.logout);
         refreshLayout = findViewById(R.id.refreshLayout);
         recyclerView = findViewById(R.id.recycleView);
 
@@ -128,7 +130,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
             }
         };
 
-        toolbar.setOnClickListener(view -> Logout());
+        logout.setOnClickListener(view -> Logout());
 
     }
 
