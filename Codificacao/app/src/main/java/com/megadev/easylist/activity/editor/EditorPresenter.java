@@ -1,5 +1,8 @@
 package com.megadev.easylist.activity.editor;
 
+import android.util.Log;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 
 import com.google.firebase.auth.FirebaseUser;
@@ -9,6 +12,7 @@ import com.megadev.easylist.model.Item;
 import com.megadev.easylist.model.Lista;
 import com.megadev.easylist.model.User;
 
+import java.io.IOException;
 import java.util.List;
 
 import retrofit2.Call;
@@ -173,7 +177,10 @@ public class EditorPresenter {
             @Override
             public void onFailure(@NonNull Call<Lista> call, @NonNull Throwable t) {
                 view.hideProgress();
-                view.onAddError(t.getLocalizedMessage(), user);
+                if (t instanceof IOException)
+                    view.onAddError(t.getLocalizedMessage(), user);
+                else
+                    view.onAddError(t.getLocalizedMessage(), user);
             }
         });
 

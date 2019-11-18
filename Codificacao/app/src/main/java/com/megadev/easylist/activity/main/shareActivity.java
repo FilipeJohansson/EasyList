@@ -117,7 +117,7 @@ public class shareActivity extends Activity implements EditorView {
     @Override
     public void onAddSuccess(String message, FirebaseUser user) {
         Toast.makeText(this,
-                "Success: " + message,
+                message,
                 Toast.LENGTH_SHORT).show();
         finish();
     }
@@ -125,7 +125,7 @@ public class shareActivity extends Activity implements EditorView {
     @Override
     public void onAddError(String message, FirebaseUser user) {
         Toast.makeText(this,
-                "Error: " + message,
+                message,
                 Toast.LENGTH_SHORT).show();
     }
 
