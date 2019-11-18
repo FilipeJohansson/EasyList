@@ -67,8 +67,8 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("share_list.php")
     Call<Lista> shareList(
-            @Query("ID_LISTA") int ID_LISTA,
-            @Query("ID_COMPARTILHADO") int ID_COMPARTILHADO
+            @Field("ID_LISTA") int ID_LISTA,
+            @Field("ID_COMPARTILHADO") int ID_COMPARTILHADO
     );
 
     @FormUrlEncoded

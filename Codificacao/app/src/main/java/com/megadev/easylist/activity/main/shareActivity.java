@@ -28,12 +28,11 @@ public class shareActivity extends Activity implements EditorView {
 
     private EditText etEmail;
 
-    private User user;
-    private boolean canShare = false;
+    private int sessionId;
 
     ProgressDialog progressDialog;
 
-    EditorPresenter presenter;
+    EditorPresenter presenter = new EditorPresenter(this);;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +41,7 @@ public class shareActivity extends Activity implements EditorView {
 
         mAuth = FirebaseAuth.getInstance();
 
-        int sessionId = Objects.requireNonNull(getIntent().getExtras()).getInt("EXTRA_SESSION_ID");
+        sessionId = Objects.requireNonNull(getIntent().getExtras()).getInt("EXTRA_SESSION_ID");
 
         /* PopUp activity */
         DisplayMetrics displayMetrics = new DisplayMetrics();
@@ -60,8 +59,6 @@ public class shareActivity extends Activity implements EditorView {
 
         getWindow().setAttributes(params);
         /* /PopUp activity/ */
-
-        presenter = new EditorPresenter(this);
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Compartilhando lista");
@@ -81,9 +78,6 @@ public class shareActivity extends Activity implements EditorView {
             presenter.getUser(EMAIL, mAuth.getCurrentUser());
         });
         /* /button salvar/ */
-
-        if (canShare)
-            shareList(user.getID_USUARIO(), 0);
 
     }
 
@@ -137,16 +131,13 @@ public class shareActivity extends Activity implements EditorView {
 
     @Override
     public void onGetResult(List<User> users) {
-        user = users.get(0);
-        canShare = true;
-
-        Toast.makeText(this,
-                "ID USUARIO",
-                Toast.LENGTH_SHORT).show();
+        User user = users.get(0);
+        shareList(user.getID_USUARIO(), sessionId);
     }
 
     private void shareList(int ID_USUARIO, int ID_LISTA) {
-        Toast.makeText(this, "ID: " + ID_USUARIO, Toast.LENGTH_SHORT).show();
+        presenter.shareList(ID_LISTA, ID_USUARIO, mAuth.getCurrentUser());
+        finish();
     }
 
 }
