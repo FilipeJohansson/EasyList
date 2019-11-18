@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -38,6 +39,10 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.RecyclerViewAd
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewAdapter holder, int position) {
         Lista lista = listas.get(position);
+
+        if (lista.getID_COMPARTILHADO() != 0)
+            holder.imgShare.setVisibility(View.VISIBLE);
+
         holder.tvListName.setText(lista.getNME_LISTA());
     }
 
@@ -49,6 +54,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.RecyclerViewAd
     class RecyclerViewAdapter extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
 
         TextView tvListName;
+        ImageView imgShare;
         CardView card_item_list;
         ItemClickListener itemClickListener;
 
@@ -56,6 +62,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.RecyclerViewAd
             super(itemView);
 
             tvListName = itemView.findViewById(R.id.tvListName);
+            imgShare = itemView.findViewById(R.id.imgShare);
             card_item_list = itemView.findViewById(R.id.card_item_list);
 
             this.itemClickListener = itemClickListener;

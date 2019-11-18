@@ -15,7 +15,7 @@
 
   }
 
-  $query = $pdo->prepare("SELECT ID_LISTA, NME_LISTA FROM `lista` WHERE `ID_USUARIO` = '$USER_ID' OR `ID_COMPARTILHADO` = '$USER_ID';");
+  $query = $pdo->prepare("SELECT ID_LISTA, NME_LISTA, ID_COMPARTILHADO FROM `lista` WHERE `ID_USUARIO` = '$USER_ID' OR `ID_COMPARTILHADO` = '$USER_ID';");
   $query->execute();
 
   $response = array();
@@ -25,7 +25,8 @@
     array_push($response,
     array(
       'ID_LISTA' =>$row['ID_LISTA'],
-      'NME_LISTA' =>$row['NME_LISTA'])
+      'NME_LISTA' =>$row['NME_LISTA'],
+      'ID_COMPARTILHADO' =>$row['ID_COMPARTILHADO'])
     );
 
   }

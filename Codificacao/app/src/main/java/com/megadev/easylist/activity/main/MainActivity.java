@@ -107,9 +107,14 @@ public class MainActivity extends AppCompatActivity implements MainView {
             public void onItemClick(View view, int position) {
                 int sessionId = lista.get(position).getID_LISTA();
                 String nmeLista = lista.get(position).getNME_LISTA();
+                boolean isSharing = false;
+
+                if (lista.get(position).getID_COMPARTILHADO() != 0)
+                    isSharing = true;
 
                 intent.putExtra("EXTRA_SESSION_ID", sessionId);
                 intent.putExtra("EXTRA_LIST_NAME", nmeLista);
+                intent.putExtra("EXTRA_SHARING", isSharing);
                 startActivity(intent);
             }
 

@@ -59,9 +59,14 @@ public class MainListAdapter extends RecyclerView.Adapter<MainListAdapter.Recycl
         else
             holder.tvDescricao.setText(item.getDSC_PRODUTO());
 
+        if (item.getQUANTIDADE() == 0)
+            holder.tvQuantidade.setVisibility(View.INVISIBLE);
+        else
+            holder.tvQuantidade.setText(item.getQUANTIDADE() + item.getUN_MEDIDA());
+
         holder.productCheckBox.setChecked(isChecked);
         holder.tvProductName.setText(item.getNME_PRODUTO());
-        holder.tvQuantidade.setText(item.getQUANTIDADE() + item.getUN_MEDIDA());
+
     }
 
     @Override

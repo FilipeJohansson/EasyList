@@ -1112,6 +1112,7 @@ drawable popupwindow
 drawable round_bg
 drawable search_bar
 drawable share
+drawable sharing
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
@@ -1252,9 +1253,11 @@ id icon_only
 id ifRoom
 id image
 id imageView
+id imgShare
 id info
 id invisible
 id italic
+id item_list
 id item_touch_helper_previous_elevation
 id labeled
 id largeLabel
@@ -1321,6 +1324,7 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id shareList
+id sharing
 id shortcut
 id showCustom
 id showHome
@@ -1592,6 +1596,8 @@ string project_id
 string prompt_email
 string prompt_password
 string search_menu_title
+string share
+string sharing
 string status_bar_notification_info_overflow
 string title_activity_login
 string txtAlerta

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_item_list"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -15,9 +16,22 @@
     app:cardElevation="0dp">
 
     <RelativeLayout
+        android:id="@+id/item_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/itenslist">
+
+        <ImageView
+            android:id="@+id/imgShare"
+            android:layout_width="25dp"
+            android:layout_height="23dp"
+            android:layout_alignStart="@id/item_list"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:contentDescription="@string/go_to_list"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/sharing"
+            tools:ignore="NotSibling" />
 
         <TextView
             android:id="@+id/tvListName"

@@ -54,6 +54,8 @@
     <string name="adicionar_item">Adicionar item</string>
     <string name="back">back</string>
     <string name="ahare">ahare</string>
+    <string name="sharing">sharing</string>
+    <string name="share" />
 
     <string-array name="units_arrays">
         <item>un</item>

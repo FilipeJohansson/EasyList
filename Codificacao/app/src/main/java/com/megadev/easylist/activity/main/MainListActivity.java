@@ -35,6 +35,7 @@ public class MainListActivity extends AppCompatActivity implements MainListView 
     private SwipeRefreshLayout refreshLayout;
     private ImageView backList;
     private ImageView shareList;
+    private ImageView sharing;
 
     private int sessionID;
 
@@ -53,6 +54,7 @@ public class MainListActivity extends AppCompatActivity implements MainListView 
 
         sessionID = Objects.requireNonNull(getIntent().getExtras()).getInt("EXTRA_SESSION_ID");
         String nmeLista = getIntent().getExtras().getString("EXTRA_LIST_NAME");
+        boolean isSharing = getIntent().getExtras().getBoolean("EXTRA_SHARING");
 
         TextView toolbar_list_title = findViewById(R.id.toolbar_list_title);
         refreshLayout = findViewById(R.id.refreshLayout);
@@ -90,6 +92,12 @@ public class MainListActivity extends AppCompatActivity implements MainListView 
             intent.putExtra("EXTRA_SESSION_ID", sessionID);
             startActivity(intent);
         });
+
+        sharing = findViewById(R.id.sharing);
+        if (isSharing) {
+            shareList.setVisibility(View.INVISIBLE);
+            sharing.setVisibility(View.VISIBLE);
+        }
 
         fab = findViewById(R.id.fab);
         fab.setOnClickListener(view -> {

@@ -680,6 +680,10 @@
         "source": "C:\\Users\\filip\\.gradle\\caches\\transforms-2\\files-2.1\\8b7b145040f80622d5d2271a1f9fca83\\appcompat-1.1.0\\res\\drawable-xhdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
+        "merged": "C:\\Users\\filip\\AndroidStudioProjects\\EasyList\\Codificacao\\app\\build\\intermediates\\res\\merged\\debug\\drawable_sharing.png.flat",
+        "source": "C:\\Users\\filip\\AndroidStudioProjects\\EasyList\\Codificacao\\app\\src\\main\\res\\drawable\\sharing.png"
+    },
+    {
         "merged": "C:\\Users\\filip\\AndroidStudioProjects\\EasyList\\Codificacao\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_bottom_nav_item_tint.xml.flat",
         "source": "C:\\Users\\filip\\.gradle\\caches\\transforms-2\\files-2.1\\9d6f0c6ce1072e080bd324ee1d6f3685\\material-1.0.0\\res\\color\\mtrl_bottom_nav_item_tint.xml"
     },
