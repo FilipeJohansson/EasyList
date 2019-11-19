@@ -131,8 +131,12 @@ public class shareActivity extends Activity implements EditorView {
 
     @Override
     public void onGetResult(List<User> users) {
-        User user = users.get(0);
-        shareList(user.getID_USUARIO(), sessionId);
+        if (!users.isEmpty()) {
+            User user = users.get(0);
+            shareList(user.getID_USUARIO(), sessionId);
+        } else {
+            Toast.makeText(this, "Nenhum usuário com esse e-mail foi encontrado", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void shareList(int ID_USUARIO, int ID_LISTA) {
