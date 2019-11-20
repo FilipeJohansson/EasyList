@@ -1,58 +1,46 @@
-Itens com * = requisitos primários
+RF001 - Cadastro de produto no banco
+	NF001.1 - Não pode ter produto sem categoria
+	NF001.2 - Cada produto deverá ter o seu identificador único
 
-=> Req. Funcionais
-    ===> Req. Não-Funcionais
+RF002 - Criar lista para a adição de produtos
+	NF002.1 - O nome da lista é obrigatório
+	NF002.2 - Não pode ter duas listas com o mesmo nome
 
+RF003 - Editar Lista 
+	NF003.1 - O nome da lista não pode estar vazio
+	NF003.2 - Não pode ter duas listas com o mesmo nome
 
-        => Cadastro de produto no banco
-                ===> Não pode ter produto sem categoria
-                ===> Cada produto deverá ter o seu identificador único
+RF004 - Excluir Lista
+	NF004.1 - Todos os produtos da lista devem ser excluídos
 
+RF005 - Excluir produto de uma lista
+	NF005.1 - Excluir também a quantidade do produto
 
-        => Criar lista para a adição de produtos *
-                ===> O nome da lista é obrigatório
-                ===> Não pode ter duas listas com o mesmo nome
+RF006 - Adicionar produtos na lista 
+	NF006.1 - Quantidade mínima de produto deve ser 1
+	NF006.2 - Nome do produto não pode estar vazio
+	NF006.3 - Não poderá haver produtos duplicados na mesma lista, porém pode ter mais de uma quantidade
+	NF006.4 - Não poderá haver produtos com quantidades negativa
+	NF006.5 - Quantidade mínima de produto deve ser 1
+	NF006.6 - Não haverá lista sem produtos
+	NF006.7 - Salvar produtos personalizados
+	NF006.8 - Permitir a entrada de produtos não cadastrados em banco
 
+RF007 - Editar produto na lista
+	NF007.1 - Quantidade mínima de produto deve ser 1 e máximo 99
+	NF007.2 - Nome do produto não pode estar vazio
+	NF007.3 - Não poderá haver produtos duplicados na mesma lista, porém pode ter mais de uma quantidade
+	NF007.4 - Não poderá haver produtos com quantidades negativa
+	NF007.5 - Não haverá lista sem produtos
+	NF007.6 - Permitir a entrada de produtos não cadastrados em banco                
 
-        => Editar Lista *
-                ===> O nome da lista não pode ser vazio
-                ===> Não pode ter duas listas com o mesmo nome
+RF008 - Consultar listas
+	NF008.1 - Deve ser possível consultar todas as listas
+	NF008.2 - Deve ser possível consultas por nome de lista
+	NF008.3 - Deve ser possível consultar listas por produtos
 
+RF009 - Pesquisar produtos dentro de uma lista já criada
+	NF009.1 - Deve ser possível consultar por nome de produto
 
-        => Excluir Lista
-                ===> Todos os produtos da lista devem ser excluídos
-
-
-        => Excluir produto de uma lista *
-                ===> Excluir também a quantidade do produto
-
-
-        => Adicionar produtos na lista *
-                ===> Quantidade minima de produto deve ser 1
-                ===> Nome do produto não pode estar vazio
-                ===> Não poderá haver produtos duplicados na mesma lista, porém pode ter mais de uma quantidade
-                ===> Não poderá haver produtos com quantidades negativa
-                ===> Não haverá lista sem produtos
-                ===> Salvar produtos personalizados
-                ===> Permitir a entrada de produtos não cadastrados em banco
-
-
-        => Editar produto na lista
-                ===> Quantidade minima de produto deve ser 1 e máximo 99
-                ===> Nome do produto não pode estar vazio
-                ===> Não poderá haver produtos duplicados na mesma lista, porém pode ter mais de uma quantidade
-                ===> Não poderá haver produtos com quantidades negativa
-                ===> Não haverá lista sem produtos
-                ===> Permitir a entrada de produtos não cadastrados em banco                
-
-
-        => Consultar listas
-                ===> Todas as listas
-                ===> Por nome
-                ===> Por produto
-        
-        => Pesquisar produtos dentro de uma lista já criada
-                ===> Por nome
-
-        => Compartilhar Lista Criada
-                ===> Gerar link de compartilhamento
+RF010 - Compartilhar Lista Criada
+	NF010.1 - Deve ser possível gerar o link do compartilhamento
