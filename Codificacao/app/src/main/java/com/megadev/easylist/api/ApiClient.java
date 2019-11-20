@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
 
-    private static final String BASE_URL = "http://secure-fixture.000webhostapp.com";
+    private static final String BASE_URL = "https://secure-fixture.000webhostapp.com";
     private static Retrofit retrofit;
     private static Gson gson = new GsonBuilder()
             .setLenient()

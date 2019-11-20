@@ -57,7 +57,11 @@ public class EditorPresenter {
             @Override
             public void onFailure(@NonNull Call<User> call, @NonNull Throwable t) {
                 view.hideProgress();
-                view.onAddError(t.getLocalizedMessage(), user);
+
+                if (t instanceof IOException)
+                    view.onAddError("REDE: " + t.getLocalizedMessage(), user);
+                else
+                    view.onAddError(t.getLocalizedMessage(), user);
 
             }
         });
